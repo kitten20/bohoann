@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Archaism';
+    src: url('Archaism-Ct1Wd100-Trial.ttf');
+    src: local('Mont Black'), local('Mont-Black'),
+        url('Archaism-Ct1Wd100-Trial.woff2') format('woff2'),
+        url('Archaism-Ct1Wd100-Trial.woff') format('woff'),
+        url('Archaism-Ct1Wd100-Trial.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

@@ -1,0 +1,30 @@
+header {
+    background-color: white;
+
+    padding: 60px 60px 60px 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a{
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration-line: none;
+        text-transform: uppercase;
+        color: black;
+    }
+}
+
+.header {
+    &-links{
+        width: 765px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-icons a:nth-child(2){
+        margin: 0 13px;
+    }
+}
