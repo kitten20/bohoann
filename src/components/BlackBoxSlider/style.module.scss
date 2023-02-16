@@ -1,0 +1,20 @@
+@import "../../style.import.scss";
+
+.adaptive{
+    display: none !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 11px;
+
+    width: 352px;
+    margin: auto;
+}
+
+@media (max-width: $tablet) {
+    .desktop{
+        display: none !important;
+    }
+
+    .adaptive{
+        display: grid !important;
+    }
+}

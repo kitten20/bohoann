@@ -1,0 +1,21 @@
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__column{
+        &:first-child{
+            width: 720px;
+        }
+
+        &:last-child{
+            width: 576px;
+        }
+
+        p{
+            margin: 0;
+
+            font-size: var(--font-size-18);
+        }
+    }
+}

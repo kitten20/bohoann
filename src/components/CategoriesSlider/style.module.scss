@@ -1,7 +1,7 @@
 @import "../../style.import.scss";
 
 .categories{
-    padding: 40px 60px;
+    padding: 40px var(--horizontal-padding);
 }
 
 .category{
@@ -17,11 +17,29 @@
     }
 
     p{
-        margin-top: 18px;
+        margin-top: var(--font-size-18-10);
+        margin-bottom: 0;
 
-        font-size: 18px;
+        font-size: var(--font-size-18);
         font-weight: 500;
         line-height: 23px;
         color: $color-black;
+    }
+}
+
+@media (max-width: $desktop) {
+    .category{
+        width: 116px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .category{
+        width: 80px;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
     }
 }

@@ -1,7 +1,10 @@
-$white: #FFFEFE;
+@import "../../../style.import.scss";
+
+$white: #fffefe;
 
 .slide {
     background-size: cover;
+    background-position-y: center;
 
     height: 600px;
 
@@ -28,7 +31,8 @@ $white: #FFFEFE;
 
                     padding-bottom: 60px;
 
-                    h2, button{
+                    h2,
+                    button {
                         width: 460px;
                     }
 
@@ -49,7 +53,7 @@ $white: #FFFEFE;
 
                         cursor: pointer;
 
-                        img{
+                        img {
                             margin-left: 15px;
                         }
                     }
@@ -75,5 +79,71 @@ $white: #FFFEFE;
         font-size: 64px;
         line-height: 54px;
         color: $white;
+    }
+}
+
+@media (max-width: $desktop) {
+    .slide {
+        &:first-child {
+            background-image: url("./assets/background-1-tablet.svg");
+        }
+
+        &:nth-child(2) {
+            background-image: url("./assets/background-2-tablet.svg");
+
+            .slide {
+                &__row {
+                    &:first-child {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        margin: initial;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .slide {
+        &:first-child {
+            background-image: url("./assets/background-1-mobile.svg");
+        }
+
+        &:nth-child(2) {
+            background-image: url("./assets/background-2-mobile.svg");
+
+            .slide {
+                &__content {
+                    padding: 0 var(--horizontal-padding);
+                }
+
+                &__row {
+                    &:first-child{
+                        padding-top: 50px;
+                    }
+
+                    &:last-child {
+                        width: 100%;
+
+                        justify-content: flex-start;
+                    }
+
+                    h2 {
+                        font-size: 45px;
+                        line-height: 40px;
+                    }
+
+                    button {
+                        font-size: 12px !important;
+
+                        width: 310px !important;
+                        padding: 15px 16px !important;
+                    }
+                }
+            }
+        }
     }
 }

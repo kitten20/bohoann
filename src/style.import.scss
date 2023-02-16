@@ -1,3 +1,27 @@
 $desktop: 1440px;
+$tablet: 1024px;
 
-$color-black: #1D1D1D;
+$color-black: #1d1d1d;
+
+:root {
+    --horizontal-padding: 60px;
+    --font-size-18: 18px;
+    --font-size-18-10: 18px;
+    --font-size-16-10: 16px;
+
+    --width-static: --tablet;
+    --tablet: 1440px;
+    --mobile: 1024px;
+
+    --color-black: #1d1d1d;
+}
+
+@media (max-width: $tablet) {
+    :root {
+        --horizontal-padding: 20px;
+
+        --font-size-18: 12px;
+        --font-size-18-10: 10px;
+        --font-size-16-10: 10px;
+    }
+}

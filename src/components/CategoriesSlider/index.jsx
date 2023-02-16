@@ -72,11 +72,14 @@ function CategoriesSlider() {
           slidesPerView: 10,
           spaceBetween: 15,
         },
-        280: {
+        1024: {
+          spaceBetween: 20,
+        },
+        300: {
           slidesPerView: "auto",
+          spaceBetween: 15,
         },
       }}
-
       className={module.categories}
     >
       {swiperData.map((i, index) => (

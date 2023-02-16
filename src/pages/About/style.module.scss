@@ -1,0 +1,7 @@
+.about__block p{
+    &, button{
+        font-size: var(--font-size-18);
+    }
+
+    padding: 0 var(--horizontal-padding);
+}

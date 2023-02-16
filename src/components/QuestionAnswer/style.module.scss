@@ -1,0 +1,48 @@
+@import "../../style.import.scss";
+
+.question-answer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__column {
+        &:first-child {
+            width: 314px;
+            margin-right: 76px;
+        }
+
+        &:last-child{
+            width: 909px;
+        }
+    }
+
+    &-columns-title{
+        font-size: var(--font-size-18);
+
+        margin-top: 0;
+    }
+
+    &-button {
+        width: 100%;
+    }
+
+    &-more {
+        display: flex;
+        justify-content: center;
+
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-decoration: none;
+        color: $color-black;
+        letter-spacing: -1px;
+
+        margin-top: 31px;
+        width: 100%;
+
+        img {
+            margin-left: 27px;
+        }
+    }
+}

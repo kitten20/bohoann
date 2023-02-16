@@ -1,0 +1,36 @@
+@import '../../../style.import.scss';
+
+.box_black{
+    background-color: $color-black;
+    border-radius: 4px;
+
+    width: 240px;
+    height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration-line: none;
+
+    h3{
+        color: white;
+        font-weight: 600;
+        font-size: 28px;
+        text-align: center;
+        text-decoration-line: none;
+    }
+}
+
+@media (max-width: $tablet) {
+    .box_black{
+        margin: auto;
+        width: 110px;
+        height: 110px;
+
+        h3{
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+}

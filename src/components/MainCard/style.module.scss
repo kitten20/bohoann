@@ -1,7 +1,16 @@
 @import "../../style.import.scss";
 
 .card {
-    padding: 0 60px;
+    padding: 0 var(--horizontal-padding);
+    margin-bottom: 54px;
+
+    &_padding {
+        padding: 0;
+
+        .card__head {
+            padding: 0 var(--horizontal-padding);
+        }
+    }
 
     &__head{
         display: flex;
@@ -11,14 +20,16 @@
         margin-bottom: 26px;
 
         &-column {
-            background-color: white;
-
             &:last-child{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
                 width: 72.5%;
+            }
+
+            &_50{
+                width: 50% !important;
             }
         }
 
@@ -29,7 +40,7 @@
 
     &__link_head {
         color: $color-black;
-        font-size: 18px;
+        font-size: var(--font-size-18);
         line-height: 23px;
         text-decoration-line: none;
         text-transform: uppercase;
@@ -51,6 +62,30 @@
         img{
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+@media (max-width: $desktop) {
+    .card{
+        &__link_head{
+            margin-left: 70px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .card{
+        &__head-text{
+            font-size: 26px;
+        }
+
+        &__swiper-button{
+            width: 9px;
+
+            &:first-child{
+                margin-right: 30px;
+            }
         }
     }
 }

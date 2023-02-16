@@ -1,0 +1,29 @@
+@import "../../style.import.scss";
+
+.slider_white {
+    &__button {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+
+        padding: 0;
+
+        border: none;
+
+        cursor: pointer;
+
+        &,
+        img {
+            width: 16px;
+            height: 28px;
+        }
+
+        &-left {
+            left: var(--horizontal-padding);
+        }
+
+        &-right {
+            right: var(--horizontal-padding);
+        }
+    }
+}

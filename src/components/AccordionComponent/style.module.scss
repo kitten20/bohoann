@@ -1,0 +1,43 @@
+@import "../../style.import.scss";
+
+.accordion {
+    &__item {
+        border-bottom: 1px solid $color-black;
+    }
+
+    &__head,
+    &__body {
+        font-size: var(--font-size-18-10);
+    }
+
+    &__head {
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: -1px;
+
+        padding: 12px 0 8px 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: relative;
+
+        cursor: pointer;
+
+        span {
+            position: absolute;
+            right: 20px;
+
+            transition: 0.25s all;
+        }
+
+        &[aria-expanded="true"] span {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__body {
+        font-weight: 400;
+    }
+}

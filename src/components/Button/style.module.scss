@@ -1,0 +1,22 @@
+@import "../../style.import.scss";
+
+.button {
+    padding: 22px;
+
+    font-size: var(--font-size-18);
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.black {
+    color: white;
+    background-color: $color-black;
+    border: 1px solid $color-black;
+}
+
+.white {
+    color: $color-black;
+    background-color: transparent;
+    border: 1px solid $color-black;
+}

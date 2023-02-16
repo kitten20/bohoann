@@ -1,0 +1,29 @@
+.try{
+    p{
+        padding: 0;
+    }
+
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:first-child{
+            margin-bottom: 40px;
+        }
+    }
+
+    &__column{
+        width: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__button{
+        width: 600px;
+
+        font-weight: 800;
+    }
+}
