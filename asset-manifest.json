@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bohoann/static/css/main.1a896887.css",
-    "main.js": "/bohoann/static/js/main.42b2abca.js",
+    "main.js": "/bohoann/static/js/main.1fa7d46a.js",
     "static/media/10.svg": "/bohoann/static/media/10.0eb56e082d62bae51c5e07e37638b1ba.svg",
     "static/media/background-1.svg": "/bohoann/static/media/background-1.efa49c6f3659a4c03b72.svg",
     "static/media/background-1-tablet.svg": "/bohoann/static/media/background-1-tablet.198ecad18e8b3599337a.svg",
@@ -115,10 +115,10 @@
     "static/media/right-icon.svg": "/bohoann/static/media/right-icon.36fd4e590788ea48f038ae1bf6c45b63.svg",
     "static/media/arrow-left.svg": "/bohoann/static/media/arrow-left.c6e9687801c2a686527c3cd6cc00a98b.svg",
     "main.1a896887.css.map": "/bohoann/static/css/main.1a896887.css.map",
-    "main.42b2abca.js.map": "/bohoann/static/js/main.42b2abca.js.map"
+    "main.1fa7d46a.js.map": "/bohoann/static/js/main.1fa7d46a.js.map"
   },
   "entrypoints": [
     "static/css/main.1a896887.css",
-    "static/js/main.42b2abca.js"
+    "static/js/main.1fa7d46a.js"
   ]
 }
