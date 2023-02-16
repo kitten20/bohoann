@@ -18,6 +18,7 @@ function MainCard({
   swiperBoolean = false,
   swiperOnly = false,
 
+  style = {},
   className = "",
   headClassName = "",
   productClassName = "",
@@ -62,7 +63,10 @@ function MainCard({
   );
 
   return (
-    <div className={module.card + " " + checkPadding() + " " + className}>
+    <div
+      className={module.card + " " + checkPadding() + " " + className}
+      {...{ style }}
+    >
       {headBoolean && (
         <div className={module.card__head + " " + headClassName}>
           <div className={module["card__head-column"]}>

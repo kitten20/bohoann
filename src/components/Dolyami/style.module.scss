@@ -1,0 +1,41 @@
+@import "../../style.import.scss";
+
+.dolyami {
+    width: 1095px;
+    margin: auto;
+
+    background-color: $color-black;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+
+    * {
+        font-size: var(--font-size-18);
+        color: white;
+    }
+
+    a {
+        position: relative;
+
+        text-decoration: none;
+
+        &::after{
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background-color: white;
+        }
+    }
+
+    img {
+        width: 181px;
+        margin-left: 40px;
+    }
+}

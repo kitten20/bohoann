@@ -1,0 +1,28 @@
+@import "../../../style.import.scss";
+
+nav{
+    max-width: 1273px;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    a{
+        padding: 15px 45px;
+
+        font-size: 32px;
+        border-radius: 4px;
+        text-decoration-line: none;
+        color: $color-black;
+
+        &:last-child{
+            padding: 0;
+        }
+    }
+}
+
+.active{
+    background-color: $color-black;
+    color: white;
+}
