@@ -1,9 +1,12 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef } from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 
 import Comment from "./Comment";
 
 function SliderComments() {
+  const swiperRef = useRef(null);
+
   const comments = [
     {
       text: "Анна Коваленко, основательница и главный дизайнер Bohoann, однажды рискнула и начала свой ювелирный эксперимент в стиле бохо.",
@@ -23,18 +26,20 @@ function SliderComments() {
   ];
 
   const breakpoints = {
-    1024: {
+    1440: {
       slidesPerView: 2.3,
       spaceBetween: 40,
+      centeredSlides: false,
     },
 
     200: {
       slidesPerView: 1,
+      centeredSlides: true,
     },
   };
 
   return (
-    <Swiper {...{ breakpoints }}>
+    <Swiper {...{ breakpoints }} ref={swiperRef}>
       {comments.map((i) => (
         <SwiperSlide>
           <Comment text={i.text} />

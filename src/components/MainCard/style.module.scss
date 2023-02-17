@@ -31,6 +31,10 @@
             &_50{
                 width: 50% !important;
             }
+
+            &_15{
+                width: 15% !important;
+            }
         }
 
         &-text{
@@ -68,6 +72,12 @@
 
 @media (max-width: $desktop) {
     .card{
+        &_adaptive{
+            .card__swiper-button{
+                display: none;
+            }
+        }
+
         &__link_head{
             margin-left: 70px;
         }
@@ -76,6 +86,8 @@
 
 @media (max-width: $tablet) {
     .card{
+        margin-bottom: 30px;
+
         &__head-text{
             font-size: 26px;
         }
@@ -84,8 +96,16 @@
             width: 9px;
 
             &:first-child{
-                margin-right: 30px;
+                margin-right: 25px;
             }
+        }
+
+        &__link_head{
+            margin-left: 40px;
+        }
+
+        &_adaptive &__head-column:last-child{
+            display: none;
         }
     }
 }

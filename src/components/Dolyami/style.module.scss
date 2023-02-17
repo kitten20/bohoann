@@ -3,12 +3,20 @@
 .dolyami {
     width: 1095px;
     margin: auto;
+    padding: 6px 16px;
 
     background-color: $color-black;
     border-radius: 4px;
 
     display: flex;
     justify-content: center;
+
+    &-container {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
 
     * {
         font-size: var(--font-size-18);
@@ -20,7 +28,7 @@
 
         text-decoration: none;
 
-        &::after{
+        &::after {
             content: "";
 
             position: absolute;
@@ -37,5 +45,41 @@
     img {
         width: 181px;
         margin-left: 40px;
+    }
+
+    &-button {
+        background-color: white;
+        color: black;
+
+        padding: 4px 11px;
+        height: fit-content;
+    }
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: $tablet) {
+    .dolyami {
+        width: 100%;
+
+        img {
+            width: 24px;
+            margin: 0;
+        }
+
+        p {
+            margin: 0 15px 0 10px;
+        }
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: flex !important;
+        align-items: center;
     }
 }

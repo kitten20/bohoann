@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import MainSlider from "./MainSlider";
 import CategoriesSlider from "../../components/CategoriesSlider";
 import MainCard from "../../components/MainCard";
@@ -13,6 +15,7 @@ import module from "./style.module.scss";
 function MainPage() {
   const products = [0, 1, 2, 3, 4];
   const productsGold = [4, 4, 4, 4, 4, 4];
+  const mapRef = useRef(null);
 
   return (
     <>
@@ -33,6 +36,7 @@ function MainPage() {
         headLinkBoolean
         headLinkText="перейти в полный каталог"
         categoriesBoolean
+        adaptiveHeaderItems
         {...{ products }}
       />
 
@@ -70,8 +74,12 @@ function MainPage() {
       <MainCard
         className={module["offline-store_main"]}
         headText="Bohoann offline store"
+        sliderUserRef={mapRef}
+        headSwiperPagination
+        swiperBoolean
+        onlyHeadPaddingBoolean
       >
-        <OfflineStore />
+        <OfflineStore {...{ mapRef }} />
       </MainCard>
 
       <MainCard headText="вопрос ответ">

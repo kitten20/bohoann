@@ -1,21 +1,23 @@
 @import "../../style.import.scss";
 
-.ring{
+.ring {
     display: flex;
     justify-content: space-between;
 
     height: 400px;
 
-    &__column{
-        &:first-child{
+    &__column {
+        &:first-child {
             width: 54.1%;
         }
 
-        &:last-child{
+        &:last-child {
             width: 34%;
         }
 
-        p, li, button{
+        p,
+        li,
+        button {
             font-size: var(--font-size-18);
             line-height: 23px;
             font-weight: 500;
@@ -23,7 +25,7 @@
             color: $color-black;
         }
 
-        p{
+        p {
             margin-bottom: 23px;
             margin-top: 0;
         }
@@ -33,7 +35,7 @@
             padding-left: 17px;
         }
 
-        button{
+        button {
             width: 100%;
             padding: 18px;
 
@@ -41,6 +43,49 @@
             border-radius: 4px;
             text-align: center;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: $desktop) {
+    .ring {
+        flex-direction: column;
+
+        height: 100%;
+
+        &__column {
+            justify-content: center;
+
+            &:first-child, &:last-child{
+                width: 100%;
+            }
+
+            &:first-child {
+                text-align: center;
+
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 937px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            &:last-child{
+                display: flex;
+            }
+
+            ol, p:nth-child(2){
+                display: none;
+            }
+
+            button{
+                width: 545px;
+                height: 64px;
+                margin-left: 25px;
+            }
         }
     }
 }

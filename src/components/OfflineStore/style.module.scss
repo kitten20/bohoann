@@ -1,6 +1,12 @@
+@import "../../style.import.scss";
+
 .offline-store {
     display: flex;
     justify-content: space-between;
+
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 0 var(--horizontal-padding);
 
     &__column {
         &:first-child {
@@ -18,7 +24,7 @@
 
             margin: 0;
 
-            &:first-child{
+            &:first-child {
                 text-transform: uppercase;
             }
 
@@ -32,8 +38,106 @@
         }
     }
 
-    &-map {
+    &-map,
+    &__column:last-child {
         width: 910px;
+    }
+
+    &-map {
         height: 400px;
+    }
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: $desktop) {
+    .offline-store {
+        flex-direction: column-reverse;
+
+        &__column {
+            &:first-child {
+                padding-top: 20px;
+                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+
+                .offline-store__row {
+                    width: 335px;
+                }
+            }
+
+            &:last-child {
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .offline-store {
+        padding: 0;
+
+        &__column {
+            overflow: hidden;
+
+            margin: initial;
+
+            &:first-child{
+                padding-top: 0;
+            }
+
+            &:last-child {
+                display: flex;
+                justify-content: center;
+
+                width: 100%;
+            }
+        }
+
+        &__row {
+            padding: 0 var(--horizontal-padding);
+            padding-top: 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            width: calc(100% - (var(--horizontal-padding) + var(--horizontal-padding))) !important;
+
+            p {
+                margin: 0 !important;
+
+                span{
+                    font-weight: 400;
+                    text-transform: none;
+                }
+
+                &:first-child {
+                    width: 200px;
+                }
+
+                &:last-child {
+                    width: 130px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        &-map {
+            width: 100%;
+        }
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: flex !important;
     }
 }

@@ -1,0 +1,29 @@
+@import "../../style.import.scss";
+
+.para{
+    font-size: var(--font-size-18);
+
+    max-width: 772px;
+    margin: 30px 0;
+}
+
+.button{
+    margin-top: 40px;
+    width: 1095px;
+
+    &-container{
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: $tablet) {
+    .button{
+        margin-top: 20px;
+        padding: 13px;
+
+        width: 100%;
+    }
+}

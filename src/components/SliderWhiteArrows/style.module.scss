@@ -4,6 +4,7 @@
     &__button {
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         z-index: 1;
 
         padding: 0;
@@ -24,6 +25,16 @@
 
         &-right {
             right: var(--horizontal-padding);
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .slider_white__button {
+        &,
+        img {
+            width: 8px;
+            height: 14px;
         }
     }
 }

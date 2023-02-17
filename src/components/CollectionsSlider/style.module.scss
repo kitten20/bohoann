@@ -1,21 +1,29 @@
-.collection {
-    height: 600px;
+@import "../../style.import.scss";
 
+.collection {
     position: relative;
 
-    img, h3 {
+    overflow: hidden;
+
+    img,
+    h3 {
         position: absolute;
+    }
+
+    &,
+    img {
+        height: 600px;
     }
 
     img {
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
 
-        width: 100%;
-        height: 100%;
+        width: 1440px;
     }
 
-    h3{
+    h3 {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -23,5 +31,28 @@
         font-size: 60px;
         color: white;
         letter-spacing: -0.5px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .collection {
+        &,
+        img {
+            height: 165px;
+            width: 390px;
+        }
+
+        h3 {
+            width: 390px;
+
+            font-size: 18px;
+
+            transform: translateX(-50%);
+
+            left: 50%;
+            top: 16px;
+
+            margin-left: 20px;
+        }
     }
 }

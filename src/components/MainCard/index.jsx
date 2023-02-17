@@ -14,6 +14,7 @@ function MainCard({
   headLinkBoolean = false,
   headLinkText = "",
   headSwiperPagination = false,
+  adaptiveHeaderItems = false,
 
   swiperBoolean = false,
   swiperOnly = false,
@@ -25,6 +26,7 @@ function MainCard({
 
   onClickRight = () => {},
   onClickLeft = () => {},
+  sliderUserRef = null,
 
   productsSliderBoolean = false,
   products = [],
@@ -40,20 +42,42 @@ function MainCard({
     (categoriesBoolean && module.card_padding) ||
     (onlyHeadPaddingBoolean && module.card_padding);
 
+  const adaptiveHeaderItemsCheck = () =>
+    adaptiveHeaderItems ? module.card_adaptive : "";
+
   const Buttons = () => (
     <div>
-      <button
-        className={module["card__swiper-button"]}
-        onClick={() => sliderRef.current.swiper.slidePrev()}
-      >
-        <img src={leftIcon} alt="" />
-      </button>
-      <button
-        className={module["card__swiper-button"]}
-        onClick={() => sliderRef.current.swiper.slideNext()}
-      >
-        <img src={rightIcon} alt="" />
-      </button>
+      {sliderUserRef === null ? (
+        <>
+          <button
+            className={module["card__swiper-button"]}
+            onClick={() => sliderRef.current.swiper.slidePrev()}
+          >
+            <img src={leftIcon} alt="" />
+          </button>
+          <button
+            className={module["card__swiper-button"]}
+            onClick={() => sliderRef.current.swiper.slideNext()}
+          >
+            <img src={rightIcon} alt="" />
+          </button>
+        </>
+      ) : (
+        <>
+          <button
+            className={module["card__swiper-button"]}
+            onClick={() => sliderUserRef.current.swiper.slidePrev()}
+          >
+            <img src={leftIcon} alt="" />
+          </button>
+          <button
+            className={module["card__swiper-button"]}
+            onClick={() => sliderUserRef.current.swiper.slideNext()}
+          >
+            <img src={rightIcon} alt="" />
+          </button>
+        </>
+      )}
     </div>
   );
   const Link = () => (
@@ -64,7 +88,15 @@ function MainCard({
 
   return (
     <div
-      className={module.card + " " + checkPadding() + " " + className}
+      className={
+        module.card +
+        " " +
+        checkPadding() +
+        " " +
+        className +
+        " " +
+        adaptiveHeaderItemsCheck()
+      }
       {...{ style }}
     >
       {headBoolean && (
@@ -78,7 +110,7 @@ function MainCard({
               className={
                 module["card__head-column"] +
                 " " +
-                module["card__head-column_50"]
+                module["card__head-column_15"]
               }
             >
               <span></span>

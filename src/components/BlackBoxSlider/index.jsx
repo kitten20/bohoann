@@ -54,7 +54,7 @@ function BlackBoxSlider({ userRef = null }) {
 
       <div className={module.adaptive}>
         {boxes.map((i, index) => (
-          <BlackBox title={i.title} />
+          <BlackBox title={i.title} key={index} />
         ))}
       </div>
     </>

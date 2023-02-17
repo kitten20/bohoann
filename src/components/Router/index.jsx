@@ -6,6 +6,9 @@ import About from "../../pages/About";
 import AnswerQuestion from "../../pages/AnswerQuestion";
 import Categories from "../../pages/Categories";
 import Contacts from "../../pages/Contacts";
+import Basket from "../../pages/Basket";
+import Documentation from "../../pages/Documentation";
+import Purchase from "../../pages/Purchase";
 
 function Router() {
   return (
@@ -16,6 +19,9 @@ function Router() {
       <Route path="/answer-question" element={<AnswerQuestion />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/contacts" element={<Contacts />} />
+      <Route path="/basket" element={<Basket />} />
+      <Route path="/documentation" element={<Documentation />} />
+      <Route path="/hire-purchase" element={<Purchase />} />
     </Routes>
   );
 }
