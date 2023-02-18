@@ -13,6 +13,7 @@ import Sertificate from "../../pages/Sertificate";
 import ItemCard from "../../pages/ItemCard";
 import Collections from "../../pages/Collections";
 import Catalogue from "../../pages/Catalogue";
+import RingBar from "../../pages/RingBar";
 
 function Router() {
   return (
@@ -23,12 +24,13 @@ function Router() {
       <Route path="/answer-question" element={<AnswerQuestion />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/catalogue" element={<Catalogue />} />
-      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/collections" element={<Collections />} />
       <Route path="/contacts" element={<Contacts />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/documentation" element={<Documentation />} />
       <Route path="/hire-purchase" element={<Purchase />} />
       <Route path="/sertificate" element={<Sertificate />} />
+      <Route path="/ringbar" element={<Ringbar />} />
       <Route path="/item-card" element={<ItemCard />} />
     </Routes>
   );
