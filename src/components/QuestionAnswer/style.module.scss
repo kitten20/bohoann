@@ -24,6 +24,8 @@
 
     &-button {
         width: 100%;
+
+        cursor: pointer;
     }
 
     &-more {
@@ -43,6 +45,33 @@
 
         img {
             margin-left: 27px;
+        }
+    }
+
+    a{
+        cursor: pointer;
+    }
+}
+
+.popup{
+    &-fields{
+        border-top: 1px solid black;
+
+        margin-top: 30px;
+    }
+
+    &-button{
+        width: 314px;
+
+        &-container{
+            display: flex;
+            justify-content: center;
+
+            margin-top: 40px;
+
+            p{
+                display: none;
+            }
         }
     }
 }
@@ -105,6 +134,35 @@
             img{
                 margin-left: 6px;
             }
+        }
+    }
+
+    .popup{
+        &-button{
+            padding: 14px;
+            width: 100%;
+
+            &-container{
+                margin-top: 20px;
+
+                display: flex;
+                flex-direction: column;
+
+                p{
+                    display: block;
+                    
+                    text-align: center;
+
+                    cursor: pointer;
+
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &__accordion *{
+            font-size: 12px;
+            letter-spacing: -0.5px;
         }
     }
 }

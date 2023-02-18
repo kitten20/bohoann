@@ -68,6 +68,11 @@
             height: 100%;
         }
     }
+
+    &__buttons{
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (max-width: $desktop) {

@@ -1,0 +1,35 @@
+@import "../../style.import.scss";
+
+.sertificate__card {
+    p {
+        font-size: var(--font-size-18);
+    }
+}
+
+.button-container {
+    width: 100%;
+    margin-bottom: 60px;
+
+    display: flex;
+    justify-content: center;
+
+    button {
+        width: 630px;
+
+        font-weight: 600;
+        letter-spacing: -0.5px;
+
+        font-size: var(--font-size-18-10);
+    }
+}
+
+@media (max-width: $tablet) {
+    .button-container {
+        margin-bottom: 40px;
+     
+        button {
+            width: 339px;
+            padding: 13px;
+        }
+    }
+}

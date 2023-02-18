@@ -1,0 +1,42 @@
+@import "../../../style.import.scss";
+
+.slider{
+    position: relative;
+}
+
+.swiper__button {
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    cursor: pointer;
+
+    &_left {
+        left: 44px;
+    }
+
+    &_right {
+        right: 44px;
+    }
+
+    img {
+        width: 12px;
+        height: 20px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .swiper__button{
+        &_left{
+            left: 30px;
+        }
+
+        &_right{
+            right: 30px;
+        }
+    }
+}

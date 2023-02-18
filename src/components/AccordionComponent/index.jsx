@@ -8,11 +8,18 @@ import {
 
 import module from "./style.module.scss";
 
-function AccordionComponent({ items = [], className = "" }) {
+function AccordionComponent({
+  items = [],
+  className = "",
+  itemClassName = "",
+}) {
   return (
     <Accordion allowZeroExpanded className={module.accordion + " " + className}>
       {items.map((i, index) => (
-        <AccordionItem key={index} className={module.accordion__item}>
+        <AccordionItem
+          key={index}
+          className={module.accordion__item + " " + itemClassName}
+        >
           <AccordionItemHeading>
             <AccordionItemButton className={module.accordion__head}>
               {i.headText}

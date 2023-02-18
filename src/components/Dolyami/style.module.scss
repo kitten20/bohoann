@@ -23,10 +23,16 @@
         color: white;
     }
 
+    h2 {
+        letter-spacing: -1px;
+    }
+
     a {
         position: relative;
 
         text-decoration: none;
+
+        cursor: pointer;
 
         &::after {
             content: "";
@@ -53,6 +59,102 @@
 
         padding: 4px 11px;
         height: fit-content;
+
+        cursor: pointer;
+    }
+
+    &_grey {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: var(--font-size-18-10);
+
+        &:last-child {
+            text-align: center;
+
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #1771e6;
+            text-decoration-line: none;
+        }
+    }
+
+    &-icon {
+        &-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__column {
+            width: 350px;
+            margin-bottom: 17px;
+
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    &__popup {
+        width: 948px;
+
+        &-container {
+            padding: 24px;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 15px;
+    }
+
+    &__payment {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 8px;
+
+        padding: 16px;
+
+        background-color: #f6f7f8;
+        border-radius: 12px;
+    }
+
+    &__item {
+        p {
+            color: rgba(0, 0, 0, 0.4);
+
+            &:first-child {
+                margin-bottom: 5px;
+                margin-top: 0;
+            }
+
+            &:nth-child(2) {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .dolyami__line {
+            height: 6px;
+            width: 100%;
+            margin-top: 12px;
+
+            background-color: rgba(0, 0, 0, 0.12);
+            border-radius: 500px;
+        }
+
+        &_active {
+            p {
+                color: black;
+            }
+
+            .dolyami__line {
+                background-color: #4bbf79;
+            }
+        }
     }
 }
 
@@ -71,6 +173,14 @@
 
         p {
             margin: 0 15px 0 10px;
+        }
+
+        &__popup{
+            width: 390px;
+        }
+
+        &-icon-row{
+            flex-direction: column;
         }
     }
 

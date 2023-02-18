@@ -1,0 +1,19 @@
+@import "../../../style.import.scss";
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: $tablet) {
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    .slide img {
+        height: 500px;
+    }
+}

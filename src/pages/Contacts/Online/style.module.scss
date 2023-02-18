@@ -1,0 +1,62 @@
+@import "../../../style.import.scss";
+
+.block {
+    width: 100%;
+
+    justify-content: center;
+
+    &,
+    &-container,
+    &-container a {
+        display: flex;
+        align-items: center;
+    }
+
+    &-container {
+        padding: 0 var(--horizontal-padding);
+        width: 1058px;
+        justify-content: space-between;
+
+        a {
+            margin: 50px 0;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .block {
+        &-container {
+            display: grid;
+            grid-template-areas:
+                "a . b"
+                "c d e";
+
+            width: 100%;
+
+            a {
+                margin: 13.5px 0;
+
+                &:nth-child(1) img {
+                    width: 91px;
+                }
+
+                &:nth-child(2) img {
+                    width: 123px;
+                }
+
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5) {
+                    img {
+                        width: 33px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}

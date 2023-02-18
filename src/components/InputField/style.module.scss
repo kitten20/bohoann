@@ -1,0 +1,37 @@
+.field {
+    &,
+    input,
+    textarea {
+        width: 100%;
+        padding: 0;
+
+        border: none;
+    }
+
+    p,
+    input,
+    textarea {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    input,
+    textarea {
+        border-bottom: 1px solid black;
+        font-size: 15px;
+
+        outline: none;
+    }
+
+    p{
+        text-transform: uppercase;
+
+        margin-bottom: 5px;
+    }
+
+    textarea{
+        height: 70px;
+
+        max-height: 200px;
+    }
+}

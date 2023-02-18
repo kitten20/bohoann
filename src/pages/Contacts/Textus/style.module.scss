@@ -1,0 +1,97 @@
+@import "../../../style.import.scss";
+
+.description {
+    font-size: var(--font-size-18-10);
+
+    margin: 0 0 20px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.column {
+    &:first-child {
+        width: 821px;
+    }
+
+    &:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        width: 309px;
+
+        button{
+            margin-top: 25px;
+            width: 100%;
+
+            font-weight: 800;
+        }
+    }
+
+    &-checkbox{
+        display: flex;
+
+        input{
+            margin-top: -9px;
+            width: 32px;
+            margin-right: 9px;
+        }
+
+        a{
+            color: black;
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: $desktop) {
+    .row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .column{
+        &:last-child{
+            width: 821px;
+            margin-top: 25px;
+
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &-checkbox, button{
+            width: 50% !important;
+            margin-top: 0 !important;
+        }
+
+        button{
+            width: 309px !important;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .column{
+        &:first-child,&:last-child{
+            width: 100%;
+        }
+
+        &-checkbox{
+            width: 100% !important;
+        }
+
+        &:last-child{
+            flex-direction: column;
+
+            button{
+                margin-top: 25px !important;
+                padding: 13px;
+                max-width: 168px;
+            }
+        }
+    }
+}

@@ -1,5 +1,23 @@
-.header {
-    img{
-        width: 100%;
+@import "../../../style.import.scss";
+
+.header img {
+    width: 100%;
+}
+
+@media (max-width: $desktop) {
+    .header p {
+        width: 631px;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        padding: 0 var(--horizontal-padding);
+
+        p {
+            width: 100%;
+            padding: 0 !important;
+        }
     }
 }

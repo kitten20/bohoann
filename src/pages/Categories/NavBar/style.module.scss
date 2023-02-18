@@ -1,6 +1,6 @@
 @import "../../../style.import.scss";
 
-nav{
+nav {
     max-width: 1273px;
     margin-right: auto;
 
@@ -8,7 +8,7 @@ nav{
     flex-wrap: wrap;
     align-items: center;
 
-    a{
+    a {
         padding: 15px 45px;
 
         font-size: 32px;
@@ -16,13 +16,69 @@ nav{
         text-decoration-line: none;
         color: $color-black;
 
-        &:last-child{
+        &:last-child {
             padding: 0;
         }
     }
 }
 
-.active{
+.active {
     background-color: $color-black;
     color: white;
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: $desktop) {
+    nav {
+        a {
+            padding: 5px 10px;
+
+            font-size: 12px;
+            text-transform: uppercase;
+
+            &:first-child,
+            &:nth-child(5) {
+                padding-left: 0;
+            }
+
+            &:last-child,
+            &:nth-child(4) {
+                padding-right: 0;
+            }
+        }
+
+        .block_grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .category-button {
+        width: 100%;
+        margin-top: 8px;
+
+        display: flex;
+        justify-content: center;
+
+        font-weight: 800;
+
+        img {
+            height: 7px;
+            width: 16px;
+        }
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: flex !important;
+        justify-content: center;
+    }
 }

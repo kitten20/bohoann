@@ -40,7 +40,7 @@ function Categories() {
         <Dolyami />
       </MainCard>
 
-      <MainCard headText="Bohoann offline store">
+      <MainCard headText="Bohoann offline store" onlyHeadPaddingBoolean>
         <OfflineStore />
       </MainCard>
     </>

@@ -7,6 +7,7 @@ import second from "./assets/2.png";
 import third from "./assets/3.png";
 import fourth from "./assets/4.png";
 import fifth from "./assets/5.png";
+import emptyImage from "./assets/empty.svg";
 import heartIcon from "./assets/heart.svg";
 
 function ProductCard({ imageIndex = 0, className = "" }) {
@@ -25,6 +26,9 @@ function ProductCard({ imageIndex = 0, className = "" }) {
     },
     {
       image: fifth,
+    },
+    {
+      image: emptyImage,
     },
   ];
 

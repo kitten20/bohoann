@@ -12,7 +12,7 @@ import img6 from "./assets/6.png";
 
 import module from "./style.module.scss";
 
-function AboutSlider() {
+function AboutSlider({ userSlides = [], className = "", userSlideClassName = "",}) {
   const slides = [
     {
       img: img1,
@@ -35,12 +35,18 @@ function AboutSlider() {
   ];
 
   return (
-    <SliderWhiteArrows>
-      {slides.map((i) => (
-        <SwiperSlide className={module.about__slide} key={i.img}>
-          <img src={i.img} alt="" />
-        </SwiperSlide>
-      ))}
+    <SliderWhiteArrows {...{ className }}>
+      {userSlides.length === 0
+        ? slides.map((i) => (
+            <SwiperSlide className={module.about__slide} key={i.img}>
+              <img src={i.img} alt="" />
+            </SwiperSlide>
+          ))
+        : userSlides.map((i) => (
+            <SwiperSlide className={module.about__slide + " " + userSlideClassName} key={i.img}>
+              <img src={i.img} alt="" />
+            </SwiperSlide>
+          ))}
     </SliderWhiteArrows>
   );
 }

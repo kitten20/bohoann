@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import BlackBox from "./BlackBox";
+import Button from "../Button";
 
 import module from "./style.module.scss";
 
@@ -53,9 +54,12 @@ function BlackBoxSlider({ userRef = null }) {
       </Swiper>
 
       <div className={module.adaptive}>
-        {boxes.map((i, index) => (
-          <BlackBox title={i.title} key={index} />
-        ))}
+        <div>
+          {boxes.map((i, index) => (
+            <BlackBox title={i.title} key={index} />
+          ))}
+        </div>
+        <Button>посмотреть все категории</Button>
       </div>
     </>
   );

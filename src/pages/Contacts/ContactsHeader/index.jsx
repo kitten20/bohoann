@@ -1,7 +1,13 @@
+import Button from "../../../components/Button";
+
+import module from "./style.module.scss";
+
+import telephone from "./assets/telephone.svg";
+
 function ContactsHeader() {
   return (
-    <div>
-      <div>
+    <div className={module.header}>
+      <div className={module.header__column}>
         <p>
           Будем рады видеть вас в наших магазинах в Москве и Санкт-Петербурге и
           на всех площадках онлайн! Любую информацию можно уточнить по
@@ -12,7 +18,12 @@ function ContactsHeader() {
           в почте bohoann@yandex.ru
         </p>
       </div>
-      <div></div>
+      <div className={module.header__column}>
+        <h3>
+          <img src={telephone} alt="" /> 8 800 300 8 777
+        </h3>
+        <Button>перейти в мессенджер</Button>
+      </div>
     </div>
   );
 }

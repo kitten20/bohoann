@@ -1,20 +1,33 @@
 @import "../../style.import.scss";
 
-.adaptive{
+.adaptive {
     display: none !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 11px;
 
     width: 352px;
     margin: auto;
+
+    div {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 11px;
+    }
 }
 
 @media (max-width: $tablet) {
-    .desktop{
+    .desktop {
         display: none !important;
     }
 
-    .adaptive{
-        display: grid !important;
+    .adaptive {
+        display: block !important;
+
+        div {
+            display: grid !important;
+        }
+
+        button{
+            padding: 15px;
+            width: 100%;
+            margin-top: 12px;
+        }
     }
 }

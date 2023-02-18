@@ -1,19 +1,21 @@
-.try{
-    p{
+@import "../../../style.import.scss";
+
+.try {
+    p {
         padding: 0;
     }
 
-    &__row{
+    &__row {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        &:first-child{
+        &:first-child {
             margin-bottom: 40px;
         }
     }
 
-    &__column{
+    &__column {
         width: 50%;
 
         display: flex;
@@ -21,9 +23,38 @@
         justify-content: flex-start;
     }
 
-    &__button{
+    &__button {
         width: 600px;
 
         font-weight: 800;
+    }
+}
+
+@media (max-width: $desktop) {
+    .try {
+        &__row {
+            flex-direction: column;
+        }
+
+        &__column {
+            width: 100%;
+
+            &:first-child p{
+                width: 469px;
+            }
+
+            &:last-child{
+                justify-content: center;
+            }
+
+            p{
+                padding: 0 !important;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .desktop{
+        display: none !important;
     }
 }

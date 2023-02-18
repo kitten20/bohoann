@@ -46,7 +46,7 @@ function MainCard({
     adaptiveHeaderItems ? module.card_adaptive : "";
 
   const Buttons = () => (
-    <div>
+    <div className={module.card__buttons}>
       {sliderUserRef === null ? (
         <>
           <button

@@ -74,6 +74,7 @@ function CategoriesSlider() {
         },
         1024: {
           spaceBetween: 20,
+          slidesPerView: 6.5,
         },
         300: {
           slidesPerView: "auto",

@@ -1,0 +1,13 @@
+@import "../../style.import.scss";
+
+.card_grey {
+    background-color: rgba(29, 29, 29, 0.2);
+
+    padding-bottom: 30px;
+}
+
+@media(max-width: $tablet){
+    .card_grey{
+        padding-bottom: 20px;
+    }
+}

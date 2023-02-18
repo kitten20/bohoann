@@ -1,9 +1,13 @@
+@import "../../../../style.import.scss";
+
 .comment {
     width: 600px;
     height: 200px;
     margin: auto;
+    margin-bottom: 1px;
 
     border: 2px solid var(--color-black);
+    border-radius: 4px;
 
     &-content {
         padding: 0 60px;
@@ -14,5 +18,12 @@
         justify-content: center;
 
         font-size: var(--font-size-18);
+    }
+}
+
+@media (max-width: $tablet) {
+    .comment{
+        width: 345px;
+        height: 140px;
     }
 }

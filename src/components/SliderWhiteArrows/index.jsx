@@ -9,13 +9,13 @@ import module from "./style.module.scss";
 import arrowLeft from "./assets/arrow-left.svg";
 import arrowRight from "./assets/arrow-right.svg";
 
-function SliderWhiteArrows({ breakpoints = {}, children }) {
+function SliderWhiteArrows({ breakpoints = {}, className="", children }) {
   const sliderRef = useRef(null);
   const swiper = useSwiper();
 
   return (
     <Swiper
-      className={module.slider_white}
+      className={module.slider_white + " " + className}
       ref={sliderRef}
       {...{ breakpoints }}
     >

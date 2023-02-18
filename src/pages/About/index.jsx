@@ -42,6 +42,10 @@ function About() {
       >
         <TryAll />
       </MainCard>
+
+      <MainCard headText="создавать вместе" className={module.tablet}>
+        <TryAll row={2} />
+      </MainCard>
     </>
   );
 }
