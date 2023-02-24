@@ -13,6 +13,7 @@ import arrowLeft from "./assets/arrow-left.svg";
 import arrowRight from "./assets/arrow-right.svg";
 import magnifier from "./assets/magnifier.svg";
 import dolyamiBadge from "./assets/dolyami-badge.svg";
+import heart from "./assets/heart.svg";
 
 function Info() {
   const swiper = useSwiper();
@@ -86,35 +87,44 @@ function Info() {
       </div>
 
       <div className={module.column}>
-        <h3>название товара в несколько слов</h3>
+        <p className={module.title}>название товара в несколько слов</p>
+        <button className={module.heart}>
+          <img src={heart} alt="" />
+        </button>
         <div>
-          <p>
-            9 999 Р <span>19 999 Р</span>
-          </p>
-
-          <div>
-            <img src={dolyamiBadge} alt="" />
-            <p>
-              4 платежа по 3 333 ₽ <img src={arrowRight} alt="" />
+          <div className={module["payment-square"]}>
+            <p className={module.title}>
+              9 999 Р <span>19 999 Р</span>
             </p>
+
+            <div className={module["payment-row"]}>
+              <img src={dolyamiBadge} alt="" />
+              <p className={module.payment}>
+                4 платежа по 3 333 ₽ <img src={arrowRight} alt="" />
+              </p>
+            </div>
           </div>
 
-          <p>
+          <p className={module.description}>
             Описание товара описание товара описание товара описание товара
             описание товараописание товара описание товара описание товара
             описание товара описание товара
           </p>
 
-          <div>
+          <div
+            className={
+              module["payment-size"] + " " + module["payment-size_first"]
+            }
+          >
             <p>
               <span>размер</span>
             </p>
 
-            <div>
+            <div className={module["payment-grid"]}>
               <p>14</p>
               <p>15</p>
               <p>15,5</p>
-              <p>16</p>
+              <p className={module.active}>16</p>
               <p>16,5</p>
               <p>17</p>
               <p>17,5</p>
@@ -125,13 +135,17 @@ function Info() {
               <p>20</p>
             </div>
 
-            <div>
+            <div className={module["payment-circle"]}>
               другой <br />
               размер
             </div>
           </div>
 
-          <div>
+          <div
+            className={
+              module["payment-size"] + " " + module["payment-size_second"]
+            }
+          >
             <p>
               <span>вес изделия</span>
             </p>
@@ -139,11 +153,20 @@ function Info() {
             <p>Арт. 7890678</p>
           </div>
 
-          <Button>в корзину</Button>
+          <Button
+            type="black"
+            className={
+              module.payment__button + " " + module.payment__button_black
+            }
+          >
+            в корзину
+          </Button>
 
-          <div>
-            <Button>быстрый заказ</Button>
-            <Button>намекнуть о подарке</Button>
+          <div className={module["payment__button-row"]}>
+            <Button className={module.payment__button}>быстрый заказ</Button>
+            <Button className={module.payment__button}>
+              намекнуть о подарке
+            </Button>
           </div>
         </div>
       </div>

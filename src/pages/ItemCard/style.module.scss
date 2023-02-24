@@ -4,10 +4,42 @@
     background-color: rgba(29, 29, 29, 0.2);
 
     padding-bottom: 30px;
+    padding-top: 30px;
+
+    &__item{
+        background-color: transparent;
+    }
+}
+
+.accordion {
+    width: 714px;
+    
+    &__body {
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: $desktop) {
+    .bread {
+        display: none;
+    }
 }
 
 @media(max-width: $tablet){
     .card_grey{
         padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .accordion{
+        width: 100%;
+
+        &__head{
+            font-weight: 400;
+        }
+
+        &__body{
+            margin: 8px 0 9px;
+        }
     }
 }

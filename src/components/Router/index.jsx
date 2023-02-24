@@ -30,7 +30,7 @@ function Router() {
       <Route path="/documentation" element={<Documentation />} />
       <Route path="/hire-purchase" element={<Purchase />} />
       <Route path="/sertificate" element={<Sertificate />} />
-      <Route path="/ringbar" element={<Ringbar />} />
+      <Route path="/ringbar" element={<RingBar />} />
       <Route path="/item-card" element={<ItemCard />} />
     </Routes>
   );

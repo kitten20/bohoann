@@ -1,0 +1,43 @@
+@import "../../../style.import.scss";
+
+.ring {
+    width: 235px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 25px;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: $desktop) {
+    .ring {
+        margin: auto;
+    }
+}
+
+@media (max-width: $tablet) {
+    .ring {
+        width: 155px;
+
+        position: relative;
+
+        p {
+            position: absolute;
+            top: 13px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

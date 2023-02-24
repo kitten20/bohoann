@@ -69,8 +69,9 @@
                 }
             }
 
-            &:last-child {
-                margin: auto;
+            &:last-child, .offline-store-map {
+
+                width: 100%;
             }
         }
     }

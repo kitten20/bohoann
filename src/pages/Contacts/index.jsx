@@ -6,6 +6,8 @@ import OfflineStore from "../../components/OfflineStore";
 import Online from "./Online";
 import Textus from "./Textus";
 
+import module from './style.module.scss'
+
 function Contacts() {
   const mapRef = useRef(null);
 
@@ -21,7 +23,7 @@ function Contacts() {
         headSwiperPagination
         sliderUserRef={mapRef}
       >
-        <OfflineStore {...{ mapRef }} />
+        <OfflineStore {...{ mapRef }} className={module.store}/>
       </MainCard>
 
       <MainCard headText="bohoann online" onlyHeadPaddingBoolean>

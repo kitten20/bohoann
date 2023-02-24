@@ -1,0 +1,14 @@
+@import '../../../style.import.scss';
+
+.items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+}
+
+@media (max-width: $desktop) {
+    .items{
+        grid-template-columns: 1fr;
+    }
+}

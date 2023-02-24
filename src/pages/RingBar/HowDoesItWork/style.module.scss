@@ -1,0 +1,28 @@
+@import "../../../style.import.scss";
+
+.container{
+    max-width: 963px;
+
+    p, ol{
+        font-size: var(--font-size-18);
+    }
+
+    p{
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    ol{
+        padding-left: 25px;
+
+        margin: 0;
+    }
+}
+
+@media (max-width: $tablet) {
+    .container{
+        p{
+            margin-bottom: 12px;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import "../../../style.import.scss";
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.create {
+    margin-top: 65px;
+
+    .description {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        span {
+            font-weight: 800;
+        }
+
+        &:first-child span {
+            margin-left: 25px;
+        }
+
+        &_2 span {
+            margin-left: 60px;
+        }
+    }
+
+    .button {
+        width: 526px;
+        margin-top: 40px;
+        margin-bottom: 0;
+
+        cursor: pointer;
+    }
+
+    .mobile {
+        display: none !important;
+    }
+}
+
+.info p {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    margin: 0 auto;
+
+    span {
+        font-weight: 600;
+
+        &:not(:first-child) {
+            margin-top: 11px;
+        }
+
+        &:last-child {
+            margin-top: 22px;
+        }
+    }
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: $desktop) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: flex !important;
+    }
+
+    .create {
+        margin-top: 25px;
+
+        .button {
+            margin-top: 0;
+            padding: 10px;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .create .button{
+        width: 100%;
+    }
+}

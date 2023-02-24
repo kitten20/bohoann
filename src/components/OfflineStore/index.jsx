@@ -5,7 +5,7 @@ import MapComponent from "../Map";
 
 import module from "./style.module.scss";
 
-function OfflineStore({ mapRef = null }) {
+function OfflineStore({ mapRef = null, className = "" }) {
   const swiperSlides = [1, 2];
 
   const RowComponent = (
@@ -58,7 +58,11 @@ function OfflineStore({ mapRef = null }) {
 
   return (
     <>
-      <div className={module["offline-store"] + " " + module.desktop}>
+      <div
+        className={
+          module["offline-store"] + " " + module.desktop + " " + className
+        }
+      >
         <div className={module["offline-store__column"]}>
           <div className={module["offline-store__row"]}>
             <p>
@@ -104,7 +108,11 @@ function OfflineStore({ mapRef = null }) {
         </div>
       </div>
 
-      <div className={module["offline-store"] + " " + module.mobile}>
+      <div
+        className={
+          module["offline-store"] + " " + module.mobile + " " + className
+        }
+      >
         <div className={module["offline-store__column"]}>
           <Swiper ref={mapRef} slidesPerView="auto">
             {swiperSlides.map((i, index) => (

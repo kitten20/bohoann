@@ -12,6 +12,8 @@ function AccordionComponent({
   items = [],
   className = "",
   itemClassName = "",
+  classNameHead = "",
+  classNameBody = "",
 }) {
   return (
     <Accordion allowZeroExpanded className={module.accordion + " " + className}>
@@ -21,12 +23,12 @@ function AccordionComponent({
           className={module.accordion__item + " " + itemClassName}
         >
           <AccordionItemHeading>
-            <AccordionItemButton className={module.accordion__head}>
+            <AccordionItemButton className={module.accordion__head + " " + classNameHead}>
               {i.headText}
               <span>+</span>
             </AccordionItemButton>
           </AccordionItemHeading>
-          <AccordionItemPanel className={module.accordion__body}>
+          <AccordionItemPanel className={module.accordion__body + " " + classNameBody}>
             {i.bodyText}
           </AccordionItemPanel>
         </AccordionItem>

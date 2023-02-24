@@ -1,5 +1,9 @@
 @import "../../../style.import.scss";
 
+.desc{
+    margin: 30px 0;
+}
+
 .mobile {
     display: none !important;
 }
@@ -15,5 +19,9 @@
 
     .slide img {
         height: 500px;
+    }
+
+    .desc{
+        margin: 14px 0 24px;
     }
 }
