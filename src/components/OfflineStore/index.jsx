@@ -96,11 +96,10 @@ function OfflineStore({ mapRef = null, className = "" }) {
         <div className={module["offline-store__column"]}>
           <Swiper ref={mapRef} slidesPerView="auto">
             {swiperSlides.map((i, index) => (
-              <SwiperSlide className={module.slide}>
+              <SwiperSlide className={module.slide} key={index}>
                 <MapComponent
                   className={module["offline-store-map"]}
                   mapVariant={i}
-                  key={index}
                 />
               </SwiperSlide>
             ))}
@@ -116,11 +115,10 @@ function OfflineStore({ mapRef = null, className = "" }) {
         <div className={module["offline-store__column"]}>
           <Swiper ref={mapRef} slidesPerView="auto">
             {swiperSlides.map((i, index) => (
-              <SwiperSlide className={module.slide}>
+              <SwiperSlide className={module.slide} key={index}>
                 <MapComponent
                   className={module["offline-store-map"]}
                   mapVariant={i}
-                  key={index}
                 />
 
                 {i === 1 ? <StoreRowMoscow /> : <StoreRowSpb />}

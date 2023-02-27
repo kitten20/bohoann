@@ -192,8 +192,8 @@ function Footer() {
               <div className={module.footer__links} key={index}>
                 {i?.title && <h4>{i?.title}</h4>}
                 <div>
-                  {i.links?.map((link, index) => (
-                    <a href={link?.link} key={index}>
+                  {i.links?.map((link, indexLink) => (
+                    <a href={link?.link} key={indexLink}>
                       {link.text}
                     </a>
                   ))}
@@ -242,8 +242,8 @@ function Footer() {
             <div className={module.footer__links} key={index}>
               {i?.title && <h4>{i?.title}</h4>}
               <div>
-                {i.links?.map((link, index) => (
-                  <a href={link?.link} key={index}>
+                {i.links?.map((link, indexLink) => (
+                  <a href={link?.link} key={indexLink}>
                     {link.text}
                   </a>
                 ))}
@@ -291,8 +291,8 @@ function Footer() {
                 <div className={module.footer__links} key={index}>
                   <h4>{i?.title}</h4>
                   <div>
-                    {i.links?.map((link, index) => (
-                      <a href={link?.link} key={index}>
+                    {i.links?.map((link, indexLink) => (
+                      <a href={link?.link} key={indexLink}>
                         {link.text}
                       </a>
                     ))}
@@ -304,10 +304,10 @@ function Footer() {
 
         <div className={module.footer__row}>
           {footerLinks.map(
-            (i, index) =>
+            (i) =>
               !i?.title &&
-              i?.links.map((link) => link.text !== "bohoann@yandex.ru" && (
-                <a href={link?.link} key={index}>
+              i?.links.map((link, indexLink) => link.text !== "bohoann@yandex.ru" && (
+                <a href={link?.link} key={indexLink}>
                   {link.text} 
                 </a>
               ))

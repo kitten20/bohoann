@@ -6,8 +6,8 @@ import module from "./style.module.scss";
 import arrowDown from "./assets/arrowDown.svg";
 import filter from "./assets/filter.svg";
 
-function GridCategories() {
-  const items = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4];
+function GridCategories({ serverData = [] }) {
+  const items = serverData?.gridCatalogue;
 
   return (
     <div className={module.categories_grid}>
@@ -15,7 +15,7 @@ function GridCategories() {
         <div className={module["categories_grid-header__column"]}>
           <p>
             <span className={module.desktop}>ФИЛЬТР</span>
-            <img src={filter} alt="" className={module.mobile}/>
+            <img src={filter} alt="" className={module.mobile} />
           </p>
           <p>Материал</p>
           <p>Цвет</p>
@@ -29,7 +29,11 @@ function GridCategories() {
       </div>
       <div className={module["categories-grid"]}>
         {items.map((i, index) => (
-          <ProductCard imageIndex={i} key={index} className={module.categories__product}/>
+          <ProductCard
+            imageIndex={i}
+            key={index}
+            className={module.categories__product}
+          />
         ))}
       </div>
       <Button className={module.button_centered}>показать еще</Button>

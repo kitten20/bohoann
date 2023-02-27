@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import AccordionComponent from "../../components/AccordionComponent";
 import Dolyami from "../../components/Dolyami";
 import MainCard from "../../components/MainCard";
@@ -6,7 +8,12 @@ import Info from "./Info";
 import module from "./style.module.scss";
 
 function ItemCard() {
-  const products = [1, 2, 3, 4, 1, 2, 3, 4];
+  const { serverData } = useServerStore();
+
+  const products = serverData[0]?.similarItems
+
+  const recommendations = serverData[0]?.itemRecommendations
+
   const items = [
     {
       headText: "подробные характеристики",
@@ -63,7 +70,7 @@ function ItemCard() {
         productsSliderBoolean
         swiperBoolean
         headSwiperPagination
-        {...{ products }}
+        products={recommendations}
       ></MainCard>
       <MainCard headBoolean={false}>
         <Dolyami />

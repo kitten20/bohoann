@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import MainCard from "../../components/MainCard";
 import NavBar from "./NavBar";
 import ProductsSlider from "../../components/ProductsSlider";
@@ -11,7 +13,9 @@ import module from "./style.module.scss";
 import banner from "./assets/background.png";
 
 function Categories() {
-  const products = [1, 1, 2, 3, 4, 4, 1];
+  const { serverData } = useServerStore();
+
+  const products = serverData[0]?.specialCatalogue;
 
   return (
     <>
@@ -29,7 +33,7 @@ function Categories() {
       </MainCard>
 
       <MainCard headBoolean={false}>
-        <GridCategories />
+        <GridCategories {...{ serverData }} />
       </MainCard>
 
       <MainCard headText="кастомизация">

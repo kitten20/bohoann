@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import { useRef } from "react";
 
 import MainSlider from "./MainSlider";
@@ -13,8 +15,11 @@ import ShortInfo from "../../components/ShortInfo";
 import module from "./style.module.scss";
 
 function MainPage() {
-  const products = [0, 1, 2, 3, 4];
-  const productsGold = [4, 4, 4, 4, 4, 4];
+  const { serverData } = useServerStore();
+
+  const products = serverData[0]?.bestSellers;
+  const productsGold = serverData[0]?.goldenProducts
+  const recommendations = serverData[0]?.stylishRecommendations
   const mapRef = useRef(null);
 
   return (
@@ -68,7 +73,7 @@ function MainPage() {
         headText="рекомендации стилиста"
         swiperBoolean
         productsSliderBoolean
-        {...{ products }}
+        products={recommendations}
       />
 
       <MainCard

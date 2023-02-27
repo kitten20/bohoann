@@ -151,10 +151,11 @@ function QuestionAnswer() {
         </p>
 
         <div className={module["popup-fields"]}>
-          {popupFields.map((i) => (
+          {popupFields.map((i, index) => (
             <InputField
               inputHeadText={i.headText}
               inputBoolean={i?.inputBoolean}
+              key={index}
             />
           ))}
         </div>

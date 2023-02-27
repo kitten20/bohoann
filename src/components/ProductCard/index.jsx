@@ -1,3 +1,5 @@
+import useStore from "../../store";
+
 import Button from "../Button";
 
 import module from "./style.module.scss";
@@ -10,7 +12,16 @@ import fifth from "./assets/5.png";
 import emptyImage from "./assets/empty.svg";
 import heartIcon from "./assets/heart.svg";
 
-function ProductCard({ imageIndex = 0, className = "" }) {
+function ProductCard({
+  imageIndex = 0,
+  category = "",
+  item = "",
+  price = 0,
+  lastPrice = 0,
+  className = "",
+}) {
+  const { addNewItem } = useStore();
+
   const images = [
     {
       image: first,
@@ -46,16 +57,26 @@ function ProductCard({ imageIndex = 0, className = "" }) {
       </div>
 
       <div className={module.product__body}>
-        <p>категория товара</p>
-        <h5>название этого товара в несколько слов</h5>
+        <p>{category}</p>
+        <h5>{item}</h5>
         <p>
-          <strong>9 999 Р</strong>
-          <span>19 999 Р</span>
+          <strong>{price} Р</strong>
+          <span>{lastPrice} Р</span>
         </p>
 
         <div className={module["product-buttons"] + " " + module.desktop}>
           <Button type="black">быстрый заказ</Button>
-          <Button>в корзину</Button>
+          <Button
+            onClick={() =>
+              addNewItem({
+                item,
+                price,
+                lastPrice,
+              })
+            }
+          >
+            в корзину
+          </Button>
         </div>
 
         <div className={module["product-buttons"] + " " + module.mobile}>

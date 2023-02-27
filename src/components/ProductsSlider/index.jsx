@@ -43,7 +43,14 @@ function ProductsSlider({
     >
       {itemsArray.map((i, index) => (
         <SwiperSlide key={index}>
-          <ProductCard imageIndex={i} className={productClassName} />
+          <ProductCard
+            className={productClassName}
+            imageIndex={i.imageIndex}
+            category={i.category}
+            item={i.item}
+            price={i.price}
+            lastPrice={i.lastPrice}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

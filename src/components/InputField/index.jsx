@@ -6,7 +6,7 @@ function InputField({
   type = "text",
   fieldBigger = false,
 }) {
-  const checkFieldBigger = () => fieldBigger && " " + module.field_bigger
+  const checkFieldBigger = () => " " + fieldBigger && " " + module.field_bigger
 
   return inputBoolean ? (
     <form className={module.field + checkFieldBigger()}>

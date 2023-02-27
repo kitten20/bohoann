@@ -1,3 +1,5 @@
+import useStore from "../../../../store";
+
 import module from "./style.module.scss";
 
 function ItemsBlock({
@@ -8,20 +10,23 @@ function ItemsBlock({
   items = [],
 }) {
   const toLocalString = (i) => i.toLocaleString("ru-RU");
+  const { basket } = useStore();
+  let basketPrice = basket.reduce((p, c) => (p += c.price), 0);
+  let basketLastPrice = basket.reduce((p, c) => (p += c.lastPrice), 0);
 
   return (
     <div className={module["cheque-block"]}>
-      {items?.map((i, index) => (
+      {basket?.map((i, index) => (
         <div className={module.item}>
           <div className={module.head}>
             <div className={module.number}>
               <p>товар {index + 1}</p>
             </div>
             <div className={module.prices}>
-              <p className={module.price}>{toLocalString(i?.price)} Р</p>
-              {i?.lastPrice !== 0 && i?.price !== i?.lastPrice ? (
+              <p className={module.price}>{toLocalString(i.price)} Р</p>
+              {i.lastPrice !== 0 && i.price !== i.lastPrice ? (
                 <p className={module.price_last}>
-                  {toLocalString(i?.lastPrice)} Р
+                  {toLocalString(i.lastPrice)} Р
                 </p>
               ) : (
                 <span></span>
@@ -43,10 +48,10 @@ function ItemsBlock({
           </div>
           <div className={module.prices}>
             <p className={module.price}>
-              <strong>29 977 Р</strong>
+              <strong>{toLocalString(basketPrice)} P</strong>
             </p>
             {true ? (
-              <p className={module.price_last}>59 997 Р</p>
+              <p className={module.price_last}>{toLocalString(basketLastPrice)} Р</p>
             ) : (
               <span></span>
             )}
@@ -57,7 +62,7 @@ function ItemsBlock({
             <span>Сумма скидок и акций</span>
           </p>
           <p className={module.prices}>
-            <span>30 000 P</span>
+            <span>{toLocalString(basketLastPrice - basketPrice)} P</span>
             <span></span>
           </p>
         </div>

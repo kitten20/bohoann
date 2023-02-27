@@ -1,10 +1,14 @@
+import { useServerStore } from "../../store";
+
 import MainCard from "../../components/MainCard";
 import Button from "../../components/Button";
 
-import module from './style.module.scss'
+import module from "./style.module.scss";
 
 function Sertificate() {
-  const products = [5, 5, 5, 5, 5, 5, 5];
+  const { serverData } = useServerStore();
+
+  const products = serverData[0]?.sertificateChoose;
 
   return (
     <>

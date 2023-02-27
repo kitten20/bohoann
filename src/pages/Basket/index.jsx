@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import MainCard from "../../components/MainCard";
 import Items from "./Items";
 import Fields from "./Fields";
@@ -7,7 +9,9 @@ import Payment from "./Payment";
 import module from "./style.module.scss";
 
 function Basket() {
-  const products = [1, 2, 3, 4, 1, 2, 3, 4];
+  const { serverData } = useServerStore();
+
+  const products = serverData[0]?.recommendationsBasket;
 
   return (
     <>
@@ -32,7 +36,7 @@ function Basket() {
         productsSliderBoolean
         swiperBoolean
         headSwiperPagination
-        products={products}
+        {...{ products }}
       ></MainCard>
     </>
   );
