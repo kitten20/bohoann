@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bohoann/static/css/main.acd3ae29.css",
-    "main.js": "/bohoann/static/js/main.9b0811af.js",
+    "main.css": "/bohoann/static/css/main.c15ddd92.css",
+    "main.js": "/bohoann/static/js/main.8fd48dd5.js",
     "static/media/10.svg": "/bohoann/static/media/10.0eb56e082d62bae51c5e07e37638b1ba.svg",
     "static/media/background-1.svg": "/bohoann/static/media/background-1.efa49c6f3659a4c03b72.svg",
     "static/media/background-1-tablet.svg": "/bohoann/static/media/background-1-tablet.198ecad18e8b3599337a.svg",
@@ -131,13 +131,14 @@
     "static/media/left-arrow.svg": "/bohoann/static/media/left-arrow.f9accc11ab23d35ccbcf0a7eeafa3bc3.svg",
     "static/media/right-icon.svg": "/bohoann/static/media/right-icon.36fd4e590788ea48f038ae1bf6c45b63.svg",
     "static/media/arrowDown.svg": "/bohoann/static/media/arrowDown.174d9eab5adc97c14e5b7f5a4a0d1c35.svg",
+    "static/media/dolyami.svg": "/bohoann/static/media/dolyami.d199cc13b5ed56f9f2f82e795a0b93b7.svg",
     "static/media/logo_mobile.svg": "/bohoann/static/media/logo_mobile.606231de91a276e78a6aa1f92b890f98.svg",
     "static/media/empty.svg": "/bohoann/static/media/empty.a3de745ea003474e175002e4fd1d8a66.svg",
-    "main.acd3ae29.css.map": "/bohoann/static/css/main.acd3ae29.css.map",
-    "main.9b0811af.js.map": "/bohoann/static/js/main.9b0811af.js.map"
+    "main.c15ddd92.css.map": "/bohoann/static/css/main.c15ddd92.css.map",
+    "main.8fd48dd5.js.map": "/bohoann/static/js/main.8fd48dd5.js.map"
   },
   "entrypoints": [
-    "static/css/main.acd3ae29.css",
-    "static/js/main.9b0811af.js"
+    "static/css/main.c15ddd92.css",
+    "static/js/main.8fd48dd5.js"
   ]
 }
