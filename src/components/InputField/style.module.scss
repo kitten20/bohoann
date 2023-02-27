@@ -23,15 +23,26 @@
         outline: none;
     }
 
-    p{
+    p {
         text-transform: uppercase;
 
         margin-bottom: 5px;
     }
 
-    textarea{
+    textarea {
         height: 70px;
 
         max-height: 200px;
+    }
+
+    &_bigger {
+        p,
+        textarea {
+            font-size: var(--font-size-18);
+        }
+
+        input {
+            font-size: var(--font-size-16-10);
+        }
     }
 }

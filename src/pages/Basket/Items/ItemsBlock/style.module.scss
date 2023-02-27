@@ -1,0 +1,44 @@
+.cheque-block {
+    margin-bottom: 20px;
+}
+
+.item {
+    padding: 18px 0 5px;
+
+    border-top: 1px solid black;
+
+    p {
+        margin: 0;
+
+        font-size: var(--font-size-18-10);
+        letter-spacing: -0.5px;
+        font-weight: 500;
+
+        span {
+            color: rgba(29, 29, 29, 0.5);
+        }
+    }
+
+    .head, .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .number {
+        width: 585px;
+    }
+
+    .prices {
+        width: calc(100% - 590px);
+
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+            &_last {
+                color: #767676;
+                text-decoration-line: line-through;
+            }
+        }
+    }
+}

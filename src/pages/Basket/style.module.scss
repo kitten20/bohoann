@@ -1,3 +1,12 @@
+@import "../../style.import.scss";
+
 .half {
     max-width: 824px;
+}
+
+@media(max-width: $tablet){
+    .half {
+        width: 100%;
+        max-width: 95.9%;
+    }
 }

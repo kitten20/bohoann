@@ -1,0 +1,21 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child){
+        margin-bottom: 7px;
+    }
+
+    input {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+    }
+
+    p{
+        margin: 0;
+        margin-left: 11px;
+
+        font-size: var(--font-size-18-10);
+    }
+}

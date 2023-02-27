@@ -1,0 +1,23 @@
+.gradient {
+    background: linear-gradient(89.59deg, #538ed1 -1.75%, #1d1d1d 118.95%);
+
+    padding: 17px 0 18px;
+    width: 100%;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    h3{
+        color: white;
+        font-size: 28px;
+    }
+}
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

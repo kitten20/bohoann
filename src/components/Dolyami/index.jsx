@@ -12,12 +12,12 @@ import badgeMobile from "./assets/badge_mobile.svg";
 import starsIcon from "./assets/icon-stars.svg";
 import walletIcon from "./assets/icon-wallet.svg";
 
-function Dolyami() {
+function Dolyami({className = ""}) {
   const [activeState, setActiveState] = useState(false);
 
   return (
     <>
-      <div className={module["dolyami-container"]}>
+      <div className={module["dolyami-container"] + " " + className}>
         <div className={module.dolyami + " " + module.desktop}>
           <p>
             Купи сейчас, плати потом.{" "}
