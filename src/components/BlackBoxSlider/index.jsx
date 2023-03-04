@@ -1,3 +1,6 @@
+import { useServerStore } from "../../store";
+
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -7,26 +10,7 @@ import Button from "../Button";
 import module from "./style.module.scss";
 
 function BlackBoxSlider({ userRef = null }) {
-  const boxes = [
-    {
-      title: "каффы",
-    },
-    {
-      title: "браслеты",
-    },
-    {
-      title: "кольца",
-    },
-    {
-      title: "серьги",
-    },
-    {
-      title: "подвески",
-    },
-    {
-      title: "кольца с камнями",
-    },
-  ];
+  const { serverData } = useServerStore();
 
   const breakpoints = {
     1440: {
@@ -46,20 +30,22 @@ function BlackBoxSlider({ userRef = null }) {
   return (
     <>
       <Swiper ref={userRef} {...{ breakpoints }} className={module.desktop}>
-        {boxes.map((i, index) => (
+        {serverData[0]?.blackBoxSlider.map((i, index) => (
           <SwiperSlide key={index}>
-            <BlackBox title={i.title} />
+            <BlackBox title={i.title} route={i.link} />
           </SwiperSlide>
         ))}
       </Swiper>
 
       <div className={module.adaptive}>
         <div>
-          {boxes.map((i, index) => (
-            <BlackBox title={i.title} key={index} />
+          {serverData[0]?.blackBoxSlider.map((i, index) => (
+            <Link>
+              <BlackBox title={i.title} key={index} />
+            </Link>
           ))}
         </div>
-        <Button>посмотреть все категории</Button>
+        <Link to ="/collections">посмотреть все категории</Link>
       </div>
     </>
   );

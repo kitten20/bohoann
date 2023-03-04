@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import module from "./style.module.scss";
 
@@ -14,35 +15,35 @@ function Header() {
   return (
     <>
       <header className={module.desktop}>
-        <a href="">
+        <Link to="/">
           <img src={logo} alt="" />
-        </a>
+        </Link>
 
         <div className={module["header-links"]}>
-          <a href="">каталог</a>
-          <a href="">коллекции</a>
-          <a href="">о бренде</a>
-          <a href="">кастомизация</a>
-          <a href="">онлайн-примерка</a>
+          <Link to="/categories">каталог</Link>
+          <Link to="/collections">коллекции</Link>
+          <Link to="/about">о бренде</Link>
+          <Link to="/">кастомизация</Link>
+          <Link to="/online-test">онлайн-примерка</Link>
         </div>
         <div className={module["header-icons"]}>
-          <a href="">
+          <Link to="/">
             <img src={icon_first} alt="" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/">
             <img src={icon_third} alt="" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/basket">
             <img src={icon_second} alt="" />
-          </a>
+          </Link>
         </div>
-        <a href="">меню</a>
+        <Link to="/">меню</Link>
       </header>
 
       <header className={module.adaptive}>
-        <a href="">
+        <Link to="/">
           <img src={logo} alt="" />
-        </a>
+        </Link>
 
         {linksChecked && (
           <div className={module["header-links"]}>
@@ -55,30 +56,30 @@ function Header() {
             </div>
 
             <span>
-              <a href="">каталог</a>
-              <a href="">коллекции</a>
-              <a href="">онлайн-примерка</a>
-              <a href="">кастомизация</a>
-              <a href="">доставка</a>
-              <a href="">гарантии</a>
-              <a href="">о бренде</a>
-              <a href="">акции</a>
-              <a href="">контакты</a>
+              <Link to="/categories">каталог</Link>
+              <Link to="/collections">коллекции</Link>
+              <Link to="/online-test">онлайн-примерка</Link>
+              <Link to="/">кастомизация</Link>
+              <Link to="/">доставка</Link>
+              <Link to="/">гарантии</Link>
+              <Link to="/about">о бренде</Link>
+              <Link to="/">акции</Link>
+              <Link to="/contacts">контакты</Link>
             </span>
           </div>
         )}
 
         <div className={module["header-burger-container"]}>
           <div className={module["header-icons"]}>
-            <a href="">
+            <Link to="/">
               <img src={icon_first} alt="" />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/">
               <img src={icon_third} alt="" />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/basket">
               <img src={icon_second} alt="" />
-            </a>
+            </Link>
           </div>
           <button
             className={module["header-burger"]}
@@ -92,9 +93,9 @@ function Header() {
       </header>
 
       <header className={module.mobile}>
-        <a href="">
+        <Link to="/">
           <img src={logoShort} alt="" />
-        </a>
+        </Link>
 
         {linksChecked && (
           <div className={module["header-links"]}>
@@ -107,30 +108,30 @@ function Header() {
             </div>
 
             <span>
-              <a href="">каталог</a>
-              <a href="">коллекции</a>
-              <a href="">онлайн-примерка</a>
-              <a href="">кастомизация</a>
-              <a href="">доставка</a>
-              <a href="">гарантии</a>
-              <a href="">о бренде</a>
-              <a href="">акции</a>
-              <a href="">контакты</a>
+              <Link to="/catalogue">каталог</Link>
+              <Link to="/collections">коллекции</Link>
+              <Link to="/online-test">онлайн-примерка</Link>
+              <Link to="/">кастомизация</Link>
+              <Link to="/">доставка</Link>
+              <Link to="/">гарантии</Link>
+              <Link to="/about">о бренде</Link>
+              <Link to="/">акции</Link>
+              <Link to="/contacts">контакты</Link>
             </span>
           </div>
         )}
 
         <div className={module["header-burger-container"]}>
           <div className={module["header-icons"]}>
-            <a href="">
+            <Link to="/">
               <img src={icon_first} alt="" />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/">
               <img src={icon_third} alt="" />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/basket">
               <img src={icon_second} alt="" />
-            </a>
+            </Link>
           </div>
           <button
             className={module["header-burger"]}

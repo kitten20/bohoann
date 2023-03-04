@@ -26,7 +26,7 @@ function RingBar() {
           <li>Завершите оформление заказа.</li>
           <li>Получите кольцо в собственном дизайне.</li>
         </ol>
-        <Button>перейти в раздел</Button>
+        <Button linkBoolean route="/ringbar">перейти в раздел</Button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import ProductsSlider from "../../components/ProductsSlider";
 import BlackBoxSlider from "../BlackBoxSlider";
@@ -13,6 +14,7 @@ function MainCard({
   headText = "",
   headLinkBoolean = false,
   headLinkText = "",
+  headLink = "",
   headSwiperPagination = false,
   adaptiveHeaderItems = false,
 
@@ -80,10 +82,10 @@ function MainCard({
       )}
     </div>
   );
-  const Link = () => (
-    <a href="https://youtube.com" className={module.card__link_head}>
+  const LinkComponent = () => (
+    <Link to={headLink} className={module.card__link_head}>
       {headLinkText}
-    </a>
+    </Link>
   );
 
   return (
@@ -126,11 +128,11 @@ function MainCard({
               }
             >
               <span></span>
-              <Link />
+              <LinkComponent />
             </div>
           ) : swiperBoolean && headLinkBoolean ? (
             <div className={module["card__head-column"]}>
-              <Link />
+              <LinkComponent />
 
               <Buttons />
             </div>

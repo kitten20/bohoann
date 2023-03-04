@@ -42,21 +42,21 @@ function OfflineStore({ mapRef = null, className = "" }) {
 
   const StoreRowMoscow = () =>
     RowComponent(
-      serverData[0]?.offlineStore[0].city,
-      serverData[0]?.offlineStore[0].street,
-      serverData[0]?.offlineStore[0].schedule,
-      serverData[0]?.offlineStore[0].telephone,
-      serverData[0]?.offlineStore[0].time,
-      serverData[0]?.offlineStore[0].price
+     serverData[0]?.offlineStore[0].city,
+     serverData[0]?.offlineStore[0].street,
+     serverData[0]?.offlineStore[0].schedule,
+     serverData[0]?.offlineStore[0].telephone,
+     serverData[0]?.offlineStore[0].time,
+     serverData[0]?.offlineStore[0].price
     );
   const StoreRowSpb = () =>
     RowComponent(
-      serverData[0]?.offlineStore[1].city,
-      serverData[0]?.offlineStore[1].street,
-      serverData[0]?.offlineStore[1].schedule,
-      serverData[0]?.offlineStore[1].telephone,
-      serverData[0]?.offlineStore[1].time,
-      serverData[0]?.offlineStore[1].price
+     serverData[0]?.offlineStore[1].city,
+     serverData[0]?.offlineStore[1].street,
+     serverData[0]?.offlineStore[1].schedule,
+     serverData[0]?.offlineStore[1].telephone,
+     serverData[0]?.offlineStore[1].time,
+     serverData[0]?.offlineStore[1].price
     );
 
   return (
@@ -89,7 +89,7 @@ function OfflineStore({ mapRef = null, className = "" }) {
         </div>
         <div className={module["offline-store__column"]}>
           <Swiper ref={mapRef} slidesPerView="auto">
-            {swiperSlides.map((i, index) => (
+            {swiperSlides?.map((i, index) => (
               <SwiperSlide className={module.slide} key={index}>
                 <MapComponent
                   className={module["offline-store-map"]}
@@ -109,7 +109,7 @@ function OfflineStore({ mapRef = null, className = "" }) {
       >
         <div className={module["offline-store__column"]}>
           <Swiper ref={mapRef} slidesPerView="auto">
-            {swiperSlides.map((i, index) => (
+            {swiperSlides?.map((i, index) => (
               <SwiperSlide className={module.slide} key={index}>
                 <MapComponent
                   className={module["offline-store-map"]}

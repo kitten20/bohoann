@@ -2,6 +2,10 @@
 
 .categories{
     padding: 40px var(--horizontal-padding);
+
+    a{
+        text-decoration: none;
+    }
 }
 
 .category{

@@ -1,3 +1,6 @@
+import { useServerStore } from "../../store";
+
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -12,58 +15,19 @@ import sixthSvg from "./assets/6.svg";
 import seventhSvg from "./assets/7.svg";
 
 function CategoriesSlider() {
-  const swiperData = [
-    {
-      title: "Примерка",
-      link: "",
-      img: firstSvg,
-    },
-    {
-      title: "Долями",
-      link: "",
-      img: secondSvg,
-    },
-    {
-      title: "Комплекты",
-      link: "",
-      img: thirdSvg,
-    },
-    {
-      title: "От стилиста",
-      link: "",
-      img: fourthSvg,
-    },
-    {
-      title: "название",
-      link: "",
-      img: fifthSvg,
-    },
-    {
-      title: "название",
-      link: "",
-      img: sixthSvg,
-    },
-    {
-      title: "название",
-      link: "",
-      img: seventhSvg,
-    },
-    {
-      title: "Примерка",
-      link: "",
-      img: firstSvg,
-    },
-    {
-      title: "Долями",
-      link: "",
-      img: secondSvg,
-    },
-    {
-      title: "Комплекты",
-      link: "",
-      img: thirdSvg,
-    },
+  const { serverData } = useServerStore();
+
+  const images = [
+    firstSvg,
+    secondSvg,
+    thirdSvg,
+    fourthSvg,
+    fifthSvg,
+    sixthSvg,
+    seventhSvg,
   ];
+
+  const swiperData = serverData[0]?.categoriesSlider;
 
   return (
     <Swiper
@@ -83,10 +47,12 @@ function CategoriesSlider() {
       }}
       className={module.categories}
     >
-      {swiperData.map((i, index) => (
+      {swiperData?.map((i, index) => (
         <SwiperSlide key={index} className={module.category}>
-          <img src={i.img} alt={i.img} />
-          <p>{i.title}</p>
+          <Link to={i.link}>
+            <img src={images[i.img]} alt="" />
+            <p>{i.title}</p>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>

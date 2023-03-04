@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/zoom";
 
+import MainCard from "../../../components/MainCard";
 import Button from "../../../components/Button";
 
 import module from "./style.module.scss";
@@ -15,7 +16,7 @@ import magnifier from "./assets/magnifier.svg";
 import dolyamiBadge from "./assets/dolyami-badge.svg";
 import heart from "./assets/heart.svg";
 
-function Info() {
+function Info({discount = 0}) {
   const swiper = useSwiper();
   const swiperRef = useRef(null);
 
@@ -74,7 +75,7 @@ function Info() {
               <div className="swiper-zoom-container">
                 <img src={i?.img} alt="" />
               </div>
-              {i?.discount > 0 && <Discount price={i?.discount} />}
+              {discount > 0 && <Discount price={discount} />}
               <img
                 src={magnifier}
                 alt=""

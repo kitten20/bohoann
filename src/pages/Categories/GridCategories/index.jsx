@@ -7,7 +7,7 @@ import arrowDown from "./assets/arrowDown.svg";
 import filter from "./assets/filter.svg";
 
 function GridCategories({ serverData = [] }) {
-  const items = serverData?.gridCatalogue;
+  const items = serverData[0]?.gridCatalogue;
 
   return (
     <div className={module.categories_grid}>
@@ -28,9 +28,13 @@ function GridCategories({ serverData = [] }) {
         </div>
       </div>
       <div className={module["categories-grid"]}>
-        {items.map((i, index) => (
+        {items?.map((i, index) => (
           <ProductCard
-            imageIndex={i}
+            imageIndex={i.imageIndex}
+            category={i.category}
+            item={i.item}
+            price={i.price}
+            lastPrice={i.lastPrice}
             key={index}
             className={module.categories__product}
           />

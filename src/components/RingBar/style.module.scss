@@ -17,7 +17,7 @@
 
         p,
         li,
-        button {
+        a {
             font-size: var(--font-size-18);
             line-height: 23px;
             font-weight: 500;
@@ -35,7 +35,7 @@
             padding-left: 17px;
         }
 
-        button {
+        a {
             width: 100%;
             padding: 18px;
 
@@ -56,7 +56,8 @@
         &__column {
             justify-content: center;
 
-            &:first-child, &:last-child{
+            &:first-child,
+            &:last-child {
                 width: 100%;
             }
 
@@ -73,17 +74,18 @@
                 }
             }
 
-            &:last-child{
+            &:last-child {
                 display: flex;
             }
 
-            ol, p:nth-child(2){
+            ol,
+            p:nth-child(2) {
                 display: none;
             }
 
-            button{
+            a {
                 width: 545px;
-                height: 64px;
+                height: min-content;
                 margin-left: 25px;
             }
         }
@@ -91,18 +93,19 @@
 }
 
 @media (max-width: $tablet) {
-    .ring{
-        &__column{
+    .ring {
+        &__column {
             flex-direction: column;
 
-            button{
+            a {
                 margin: 0 auto;
-                width: 330px;
-                height: 44px;
+                max-width: 330px;
+                width: 100%;
+                height: auto;
                 padding: 6px;
             }
 
-            p{
+            p {
                 line-height: 16px;
             }
         }

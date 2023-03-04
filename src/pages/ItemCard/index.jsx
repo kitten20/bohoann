@@ -10,9 +10,11 @@ import module from "./style.module.scss";
 function ItemCard() {
   const { serverData } = useServerStore();
 
-  const products = serverData[0]?.similarItems
+  const products = serverData[0]?.similarItems;
 
-  const recommendations = serverData[0]?.itemRecommendations
+  const recommendations = serverData[0]?.itemRecommendations;
+
+  const itemInfoData = serverData[0]?.itemCardData
 
   const items = [
     {

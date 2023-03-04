@@ -18,8 +18,8 @@ function MainPage() {
   const { serverData } = useServerStore();
 
   const products = serverData[0]?.bestSellers;
-  const productsGold = serverData[0]?.goldenProducts
-  const recommendations = serverData[0]?.stylishRecommendations
+  const productsGold = serverData[0]?.goldenProducts;
+  const recommendations = serverData[0]?.stylishRecommendations;
   const mapRef = useRef(null);
 
   return (
@@ -42,7 +42,6 @@ function MainPage() {
         headLinkText="перейти в полный каталог"
         categoriesBoolean
         adaptiveHeaderItems
-        {...{ products }}
       />
 
       <MainCard
@@ -59,6 +58,7 @@ function MainPage() {
         headText="коллекции"
         headLinkBoolean
         headLinkText="посмотреть все"
+        headLink="/collections"
         products={productsGold}
         onlyHeadPaddingBoolean
       >
