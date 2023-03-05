@@ -107,6 +107,7 @@ footer {
     &__links {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         &:first-child {
             width: 143px;
@@ -120,8 +121,16 @@ footer {
             width: 213px;
         }
 
-        &:last-child {
+        &_address {
             width: 234px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &_address & {
+            width: 100%;
         }
 
         div {
@@ -184,10 +193,6 @@ footer {
 
     footer {
         .footer {
-            &__links {
-                height: 100%;
-            }
-
             &__row {
                 &:not(:nth-child(2)) {
                     display: flex;
@@ -239,7 +244,7 @@ footer {
     }
 
     footer {
-        h3{
+        h3 {
             font-size: 24px;
             text-transform: uppercase;
         }
@@ -250,11 +255,11 @@ footer {
                 margin: auto;
             }
 
-            &-message-row a{
+            &-message-row a {
                 margin-top: 5px !important;
             }
 
-            &-button{
+            &-button {
                 padding: 6px;
 
                 font-size: 10px;
@@ -289,9 +294,9 @@ footer {
                         width: 240px;
                     }
 
-                    div{
+                    div {
                         flex-direction: column;
-                        align-items: flex-start;   
+                        align-items: flex-start;
                     }
 
                     img {
@@ -299,13 +304,23 @@ footer {
                     }
                 }
 
-                &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
                     padding: 15px 0;
                 }
 
-                &:nth-child(2) &__links{
+                &:nth-child(2) &__links {
                     &:first-child {
-                        
+                        width: 121px;
+                    }
+
+                    &:nth-child(2){
+                        width: 117px;
+                    }
+
+                    &:nth-child(3){
+                        width: 75px;
                     }
                 }
             }

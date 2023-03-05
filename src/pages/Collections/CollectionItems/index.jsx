@@ -1,3 +1,5 @@
+import { useServerStore } from "../../../store";
+
 import CollectionItem from "../CollectionItem";
 
 import module from "./style.module.scss";
@@ -17,7 +19,10 @@ import svg12 from "./assets/12.svg";
 import svg13 from "./assets/13.svg";
 
 function CollectionItems() {
-  const collections = [
+  const { serverData } = useServerStore();
+  const collections = serverData[0]?.collections;
+
+  const collectionsMock = [
     {
       title: "enigma",
       img: svg13,
@@ -134,7 +139,7 @@ function CollectionItems() {
 
   return (
     <div className={module.items}>
-      {collections.map((i, index) => (
+      {collections?.map((i, index) => (
         <CollectionItem
           key={index}
           img={i.img}

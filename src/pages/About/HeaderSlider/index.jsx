@@ -9,27 +9,8 @@ import img4 from "./assets/4.png";
 import img5 from "./assets/5.png";
 import img6 from "./assets/6.png";
 
-function HeaderSlider() {
-  const userSlides = [
-    {
-      img: img1,
-    },
-    {
-      img: img2,
-    },
-    {
-      img: img3,
-    },
-    {
-      img: img4,
-    },
-    {
-      img: img5,
-    },
-    {
-      img: img6,
-    },
-  ];
+function HeaderSlider({ serverData = [] }) {
+  const userSlides = serverData?.headerSlider
 
   return (
     <div>

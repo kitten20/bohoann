@@ -59,7 +59,7 @@ function Sertificate() {
       ></MainCard>
 
       <div className={module["button-container"]}>
-        <Button>перейти в каталог</Button>
+        <Button linkBoolean route="/categories">перейти в каталог</Button>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { useServerStore } from "../../store";
+import { useServerStore, useStore } from "../../store";
 
 import AccordionComponent from "../../components/AccordionComponent";
 import Dolyami from "../../components/Dolyami";
@@ -9,44 +9,25 @@ import module from "./style.module.scss";
 
 function ItemCard() {
   const { serverData } = useServerStore();
+  const { addNewItem } = useStore();
 
   const products = serverData[0]?.similarItems;
 
   const recommendations = serverData[0]?.itemRecommendations;
 
-  const itemInfoData = serverData[0]?.itemCardData
+  const itemCard = serverData[0]?.itemCard[0];
+  const itemCardData = itemCard?.itemCardData[0];
 
-  const items = [
-    {
-      headText: "подробные характеристики",
-      bodyText:
-        "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ ответ  ответответ ",
-    },
-    {
-      headText: "металл",
-      bodyText:
-        "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ ответ  ответответ ",
-    },
-    {
-      headText: "вес",
-      bodyText:
-        "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ ответ  ответответ ",
-    },
-    {
-      headText: "Уход",
-      bodyText:
-        "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ ответ  ответответ ",
-    },
-  ];
+  const items = itemCard?.accordionItems;
 
   return (
     <>
       <MainCard headBoolean={false} className={module.bread}>
-        <p>Каталог / Каффы / Кафф базовый</p>
+        <p>{itemCard?.breadcrumbs}</p>
       </MainCard>
 
       <MainCard headBoolean={false}>
-        <Info />
+        <Info {...{ itemCardData, addNewItem }} />
       </MainCard>
 
       <MainCard headBoolean={false}>

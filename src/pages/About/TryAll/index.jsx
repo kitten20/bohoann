@@ -2,7 +2,7 @@ import Button from "../../../components/Button";
 
 import module from "./style.module.scss";
 
-function TryAll({ row = 1 }) {
+function TryAll({ row = 1, serverData = [] }) {
   const Try2 = () => (
     <div className={module.try__row}>
       <div className={module.try__column}>
@@ -13,7 +13,7 @@ function TryAll({ row = 1 }) {
       </div>
 
       <div className={module.try__column}>
-        <Button className={module.try__button}>
+        <Button className={module.try__button} linkBoolean route={serverData?.testRingBar}>
           попробовать сервис ring bar
         </Button>
       </div>
@@ -28,7 +28,7 @@ function TryAll({ row = 1 }) {
         </div>
 
         <div className={module.try__column}>
-          <Button className={module.try__button}>
+          <Button className={module.try__button} linkBoolean route={serverData?.tryAll}>
             смотреть украшения для блеска глаз
           </Button>
         </div>
@@ -42,7 +42,7 @@ function TryAll({ row = 1 }) {
         </div>
 
         <div className={module.try__column}>
-          <Button className={module.try__button}>
+          <Button className={module.try__button} linkBoolean route={serverData?.testRingBar}>
             попробовать сервис ring bar
           </Button>
         </div>

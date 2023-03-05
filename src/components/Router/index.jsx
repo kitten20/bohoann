@@ -29,9 +29,9 @@ function Router() {
       <Route path="/basket" element={<Basket />} />
       <Route path="/documentation" element={<Documentation />} />
       <Route path="/hire-purchase" element={<Purchase />} />
-      <Route path="/sertificate" element={<Sertificate />} />
-      <Route path="/ringbar" element={<RingBar />} />
-      <Route path="/item-card" element={<ItemCard />} />
+      <Route path="/sertificate/:id" element={<Sertificate />} />
+      <Route path="/ringbar/:id" element={<RingBar />} />
+      <Route path="/item-card/:id" element={<ItemCard />} />
     </Routes>
   );
 }

@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import MainCard from "../../components/MainCard";
 import Button from "../../components/Button";
 
@@ -7,6 +9,9 @@ import iphone from "./assets/iphone.png";
 import hands from "./assets/hands.svg";
 
 function OnlineTest() {
+  const { serverData } = useServerStore();
+  const onlineTest = serverData[0]?.onlineTest[0];
+
   return (
     <>
       <MainCard headText="онлайн-примерка" className={module.online}>
@@ -73,7 +78,7 @@ function OnlineTest() {
               </p>
             </div>
 
-            <Button type="black" className={module.online__button}>
+            <Button type="black" className={module.online__button} linkBoolean route={onlineTest?.link}>
               отправить фото для примерки
             </Button>
           </div>

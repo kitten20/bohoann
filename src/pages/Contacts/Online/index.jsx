@@ -6,28 +6,31 @@ import vk from "./assets/vk.svg";
 import telegram from "./assets/telegram.svg";
 import pinterest from "./assets/pinterest.svg";
 
-function Online() {
+function Online({serverData = []}) {
+  const contacts = serverData[0]?.contacts[0]
+  const mainLinks = serverData[0]?.mainLinks[0]
+
   const alphabet = ["a", "b", "c", "d", "e"];
   const links = [
     {
-      img: ozon,
-      link: "",
+      img: contacts?.ozon,
+      link: mainLinks?.ozon,
     },
     {
-      img: wildberries,
-      link: "",
+      img: contacts?.wildberries,
+      link: mainLinks?.wildberries,
     },
     {
-      img: vk,
-      link: "",
+      img: contacts?.vk,
+      link: mainLinks?.vk,
     },
     {
-      img: telegram,
-      link: "",
+      img: contacts?.telegram,
+      link: mainLinks?.vk,
     },
     {
-      img: pinterest,
-      link: "",
+      img: contacts?.pinterest,
+      link: mainLinks?.pinterest,
     },
   ];
 

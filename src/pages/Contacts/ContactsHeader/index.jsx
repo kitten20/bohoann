@@ -4,7 +4,7 @@ import module from "./style.module.scss";
 
 import telephone from "./assets/telephone.svg";
 
-function ContactsHeader() {
+function ContactsHeader({serverData = []}) {
   return (
     <div className={module.header}>
       <div className={module.header__column}>
@@ -14,14 +14,14 @@ function ContactsHeader() {
         </p>
         <p>
           Любую информацию можно уточнить по бесплатному номеру, в мессенджере и
-          в почте bohoann@yandex.ru
+          в почте {serverData?.email}
         </p>
       </div>
       <div className={module.header__column}>
         <h3>
-          <img src={telephone} alt="" /> 8 800 300 8 777
+          <img src={telephone} alt="" /> {serverData?.telephoneMessage?.telephone}
         </h3>
-        <Button>перейти в мессенджер</Button>
+        <Button linkBoolean route={serverData?.telephoneMessage?.link}>перейти в мессенджер</Button>
       </div>
     </div>
   );

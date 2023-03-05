@@ -1,8 +1,8 @@
-import module from './style.module.scss'
+import module from "./style.module.scss";
 
-import background from './assets/background.png'
+function AboutHeader({ serverData = []}) {
+  const background = serverData?.headerBackground
 
-function AboutHeader() {
   return (
     <div className={module.header}>
       <p>

@@ -2,7 +2,7 @@
 
 .try {
     p {
-        padding: 0;
+        padding: 0 !important;
     }
 
     &__row {
@@ -21,6 +21,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
+        &:last-child{
+            justify-content: flex-end;
+        }
     }
 
     &__button {
@@ -44,13 +48,17 @@
             }
 
             &:last-child{
-                justify-content: center;
+                justify-content: center !important;
             }
 
             p{
                 padding: 0 !important;
                 margin-top: 0;
             }
+        }
+
+        &__button{
+            padding: 15px 0;
         }
     }
 

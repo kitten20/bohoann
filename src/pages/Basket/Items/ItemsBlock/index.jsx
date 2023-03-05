@@ -7,7 +7,6 @@ function ItemsBlock({
   item = "",
   price = 0,
   lastPrice = 0,
-  items = [],
 }) {
   const toLocalString = (i) => i.toLocaleString("ru-RU");
   const { basket } = useStore();

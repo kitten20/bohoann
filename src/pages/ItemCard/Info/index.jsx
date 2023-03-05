@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Zoom } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -16,31 +16,20 @@ import magnifier from "./assets/magnifier.svg";
 import dolyamiBadge from "./assets/dolyami-badge.svg";
 import heart from "./assets/heart.svg";
 
-function Info({discount = 0}) {
+function Info({ discount = 0, itemCardData = [], addNewItem = () => {} }) {
+  const [size, setSize] = useState("");
   const swiper = useSwiper();
   const swiperRef = useRef(null);
 
-  const items = [
-    {
-      discount: 30,
-      img: svg1,
-    },
-    {
-      discount: 50,
-      img: svg1,
-    },
-    {
-      discount: 5,
-      img: svg1,
-    },
-    {
-      img: svg1,
-    },
-  ];
+  const imagesCard = itemCardData?.images;
 
-  const Discount = ({ price = 0 }) => (
+  const Discount = () => (
     <>
-      <div className={module.discount}>-{price}%</div>
+      {itemCardData?.discount > 0 || itemCardData?.discount !== undefined ? (
+        <div className={module.discount}>-{itemCardData?.discount}%</div>
+      ) : (
+        ""
+      )}
     </>
   );
 
@@ -70,12 +59,12 @@ function Info({discount = 0}) {
             <img src={arrowRight} alt="" />
           </button>
 
-          {items.map((i, index) => (
+          {imagesCard?.map((i, index) => (
             <SwiperSlide key={index}>
               <div className="swiper-zoom-container">
-                <img src={i?.img} alt="" />
+                <img src={i} alt="" />
               </div>
-              {discount > 0 && <Discount price={discount} />}
+              <Discount />
               <img
                 src={magnifier}
                 alt=""
@@ -95,22 +84,19 @@ function Info({discount = 0}) {
         <div>
           <div className={module["payment-square"]}>
             <p className={module.title}>
-              9 999 Р <span>19 999 Р</span>
+              {itemCardData?.price} Р <span>{itemCardData?.lastPrice} Р</span>
             </p>
 
             <div className={module["payment-row"]}>
               <img src={dolyamiBadge} alt="" />
               <p className={module.payment}>
-                4 платежа по 3 333 ₽ <img src={arrowRight} alt="" />
+                {itemCardData?.paymentNum} платежа по {itemCardData?.paymentSum}{" "}
+                ₽ <img src={arrowRight} alt="" />
               </p>
             </div>
           </div>
 
-          <p className={module.description}>
-            Описание товара описание товара описание товара описание товара
-            описание товараописание товара описание товара описание товара
-            описание товара описание товара
-          </p>
+          <p className={module.description}>{itemCardData?.description}</p>
 
           <div
             className={
@@ -122,18 +108,15 @@ function Info({discount = 0}) {
             </p>
 
             <div className={module["payment-grid"]}>
-              <p>14</p>
-              <p>15</p>
-              <p>15,5</p>
-              <p className={module.active}>16</p>
-              <p>16,5</p>
-              <p>17</p>
-              <p>17,5</p>
-              <p>18</p>
-              <p>18,5</p>
-              <p>19</p>
-              <p>19,5</p>
-              <p>20</p>
+              {itemCardData?.sizes?.map((i, index) => (
+                <p
+                  key={index}
+                  onClick={() => setSize(i)}
+                  className={size === i ? module.active : ""}
+                >
+                  {i}
+                </p>
+              ))}
             </div>
 
             <div className={module["payment-circle"]}>
@@ -150,8 +133,8 @@ function Info({discount = 0}) {
             <p>
               <span>вес изделия</span>
             </p>
-            <p>99 гр</p>
-            <p>Арт. 7890678</p>
+            <p>{itemCardData?.weight} гр</p>
+            <p>Арт. {itemCardData?.itemId}</p>
           </div>
 
           <Button
@@ -159,13 +142,14 @@ function Info({discount = 0}) {
             className={
               module.payment__button + " " + module.payment__button_black
             }
+            onClick={() => addNewItem(itemCardData)}
           >
             в корзину
           </Button>
 
           <div className={module["payment__button-row"]}>
             <Button className={module.payment__button}>быстрый заказ</Button>
-            <Button className={module.payment__button}>
+            <Button className={module.payment__button} linkBoolean route="/">
               намекнуть о подарке
             </Button>
           </div>

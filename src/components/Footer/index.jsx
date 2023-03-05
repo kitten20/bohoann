@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import Button from "../Button";
 
 import module from "./style.module.scss";
@@ -12,24 +14,24 @@ import telephone from "./assets/telephone.svg";
 import message from "./assets/message.svg";
 
 function Footer() {
-  const linkThreeRows = (title = "", street = "", telephone = "") => (
-    <>
-      <span>{title}</span>
-      <br />
-      {street}
-      <br />
-      {telephone}
-    </>
-  );
+  const { serverData } = useServerStore();
+  const footerLinksServer = serverData[0]?.footerLinks[0];
+  const mainLinks = serverData[0]?.mainLinks[0];
+
+  // const LinkThreeRows = (title = "", street = "", telephone = "") => (
+  //   <>
+
+  //   </>
+  // );
   const FooterIcons = () => (
     <div className={module["footer-icons"]}>
-      <a href="">
+      <a href={mainLinks?.vk}>
         <img src={vk} alt="" />
       </a>
-      <a href="">
+      <a href={mainLinks?.telegram}>
         <img src={telegram} alt="" />
       </a>
-      <a href="">
+      <a href={mainLinks?.pinterest}>
         <img src={pinterest} alt="" />
       </a>
     </div>
@@ -47,10 +49,17 @@ function Footer() {
   const FooterMessageRow = () => (
     <>
       <div className={module["footer-message-row"]}>
-        <Button type="black" linkBoolean className={module["footer-button"]}>
+        <Button
+          type="black"
+          route={mainLinks?.telephoneMessage?.link}
+          linkBoolean
+          className={module["footer-button"]}
+        >
           в мессенджер
         </Button>
-        <a href="tel:8 800 300 8 777">8 800 300 8 777</a>
+        <a href={`tel:${mainLinks?.telephoneMessage?.telephone}`}>
+          {mainLinks?.telephoneMessage?.telephone}
+        </a>
       </div>
     </>
   );
@@ -59,122 +68,65 @@ function Footer() {
     {
       title: "каталог",
 
-      links: [
-        {
-          text: "SALE",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Кольца",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Серьги",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Колье",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Браслеты",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Каффы",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Комплекты",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Золото",
-          link: "https://www.google.com",
-        },
-      ],
+      links: footerLinksServer?.catalogue ?? [],
     },
     {
       title: "коллекции",
 
-      links: [
-        {
-          text: "Новинки",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Базовые украшения",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Enigma",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Hypnosis",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Chains",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Petra",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Brilliance",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Остальные коллекции",
-          link: "https://www.google.com",
-        },
-      ],
+      links: footerLinksServer?.collections ?? [],
     },
     {
       title: "СЕРВИС",
 
-      links: [
-        {
-          text: "Кастомизация и индивидуальное изготовление",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Ring-bar",
-          link: "https://www.google.com",
-        },
-        {
-          text: "Другое",
-          link: "https://www.google.com",
-        },
-      ],
+      links: footerLinksServer?.service ?? [],
     },
-    {
-      links: [
-        {
-          text: linkThreeRows(
-            "Москва",
-            "Садово-Черногрязская 3Бс1",
-            "+7 900 620 88 77"
-          ),
-          link: "tel:+7 900 620 88 77",
-        },
-        {
-          text: linkThreeRows(
-            "Санкт-Петербург",
-            "Рылеева 33",
-            "+7 812 250 8 777"
-          ),
-          link: "tel:+7 812 250 8 777",
-        },
-        {
-          text: "bohoann@yandex.ru",
-          link: "https://www.google.com",
-        },
-      ],
-    },
+    // links: [
+    //   {
+    //     text: linkThreeRows(
+    //       "Москва",
+    //       "Садово-Черногрязская 3Бс1",
+    //       "+7 900 620 88 77"
+    //     ),
+    //     link: "tel:+7 900 620 88 77",
+    //   },
+    //   {
+    //     text: linkThreeRows(
+    //       "Санкт-Петербург",
+    //       "Рылеева 33",
+    //       "+7 812 250 8 777"
+    //     ),
+    //     link: "tel:+7 812 250 8 777",
+    //   },
+    //   {
+    //     text: "bohoann@yandex.ru",
+    //     link: "https://www.google.com",
+    //   },
+    // ]
   ];
+
+  const footerAddress = footerLinksServer?.addresses ?? [];
+
+  const FooterAddressContainer = () => (
+    <div className={module.footer__links_address}>
+      {footerAddress?.map((i, index) => (
+        <div className={module.footer__links} key={index}>
+          {i.city !== undefined ? (
+            <div>
+              <a href={i.link} key={index}>
+                <span>{i.city}</span>
+                <br />
+                {i.street}
+                <br />
+                {i.telephone}
+              </a>
+            </div>
+          ) : (
+            <a href={i.link}>{i.text}</a>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <footer>
@@ -188,11 +140,11 @@ function Footer() {
             </div>
           </div>
           <div className={module.footer__row}>
-            {footerLinks.map((i, index) => (
+            {footerLinks?.map((i, index) => (
               <div className={module.footer__links} key={index}>
                 {i?.title && <h4>{i?.title}</h4>}
                 <div>
-                  {i.links?.map((link, indexLink) => (
+                  {i?.links?.map((link, indexLink) => (
                     <a href={link?.link} key={indexLink}>
                       {link.text}
                     </a>
@@ -200,6 +152,7 @@ function Footer() {
                 </div>
               </div>
             ))}
+            <FooterAddressContainer />
           </div>
           <div className={module.footer__row}>
             <img src={gift} alt="" />
@@ -216,7 +169,7 @@ function Footer() {
           <FooterIcons />
 
           <a>
-            <span>ИП Коваленко Д.А. ОРГНИП 316784700073997</span>
+            <span>{footerLinksServer?.human ?? ""}</span>
           </a>
 
           <p>дизайн от chsv.agency</p>
@@ -238,11 +191,11 @@ function Footer() {
           <FooterIcons />
         </div>
         <div className={module.footer__row}>
-          {footerLinks.map((i, index) => (
+          {footerLinks?.map((i, index) => (
             <div className={module.footer__links} key={index}>
               {i?.title && <h4>{i?.title}</h4>}
               <div>
-                {i.links?.map((link, indexLink) => (
+                {i?.links?.map((link, indexLink) => (
                   <a href={link?.link} key={indexLink}>
                     {link.text}
                   </a>
@@ -250,14 +203,18 @@ function Footer() {
               </div>
             </div>
           ))}
+
+          <FooterAddressContainer />
         </div>
         <div className={module.footer__row}>
           <div>
             <a>
-              <span>ИП Коваленко Д.А. ОРГНИП 316784700073997</span>
+              <span>{footerLinksServer?.human ?? ""}</span>
             </a>
 
-            <p>дизайн от chsv.agency</p>
+            <p>
+              <a href="">дизайн от chsv.agency</a>
+            </p>
           </div>
 
           <FooterMessageRow />
@@ -285,13 +242,13 @@ function Footer() {
           <img src={logoShort} alt="" />
         </div>
         <div className={module.footer__row}>
-          {footerLinks.map(
+          {footerLinks?.map(
             (i, index) =>
               i?.title && (
                 <div className={module.footer__links} key={index}>
                   <h4>{i?.title}</h4>
                   <div>
-                    {i.links?.map((link, indexLink) => (
+                    {i?.links?.map((link, indexLink) => (
                       <a href={link?.link} key={indexLink}>
                         {link.text}
                       </a>
@@ -303,15 +260,7 @@ function Footer() {
         </div>
 
         <div className={module.footer__row}>
-          {footerLinks.map(
-            (i) =>
-              !i?.title &&
-              i?.links.map((link, indexLink) => link.text !== "bohoann@yandex.ru" && (
-                <a href={link?.link} key={indexLink}>
-                  {link.text} 
-                </a>
-              ))
-          )}
+          <FooterAddressContainer />
           <FooterMessageRow />
         </div>
       </div>

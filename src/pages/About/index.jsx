@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import MainCard from "../../components/MainCard";
 import AboutHeader from "./AboutHeader";
 import HeaderSlider from "./HeaderSlider";
@@ -7,6 +9,9 @@ import TryAll from "./TryAll";
 import module from "./style.module.scss";
 
 function About() {
+  const { serverData } = useServerStore();
+  const aboutPageData = serverData[0]?.aboutPage[0];
+
   return (
     <>
       <MainCard
@@ -15,7 +20,7 @@ function About() {
         onlyHeadPaddingBoolean
         className={module.about__block}
       >
-        <AboutHeader />
+        <AboutHeader serverData={aboutPageData} />
       </MainCard>
 
       <MainCard
@@ -23,7 +28,7 @@ function About() {
         onlyHeadPaddingBoolean
         className={module.about__block}
       >
-        <HeaderSlider />
+        <HeaderSlider serverData={aboutPageData} />
       </MainCard>
 
       <MainCard
@@ -31,7 +36,7 @@ function About() {
         onlyHeadPaddingBoolean
         className={module.about__block}
       >
-        <SliderComments />
+        <SliderComments serverData={aboutPageData} />
       </MainCard>
 
       <MainCard
@@ -40,11 +45,11 @@ function About() {
 количество эмоций!"
         className={module.about__block}
       >
-        <TryAll />
+        <TryAll serverData={aboutPageData} />
       </MainCard>
 
       <MainCard headText="создавать вместе" className={module.tablet}>
-        <TryAll row={2} />
+        <TryAll row={2} serverData={aboutPageData} />
       </MainCard>
     </>
   );

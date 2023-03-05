@@ -3,7 +3,7 @@ import Button from "../../../components/Button";
 
 import module from "./style.module.scss";
 
-function Textus() {
+function Textus({serverData = []}) {
   const fields = [
     {
       headText: "ФИО",
@@ -20,7 +20,7 @@ function Textus() {
   ];
 
   return (
-    <div className={module.row}>
+    <form className={module.row}>
       <div className={module.column}>
         <p className={module.description}>
           Напишите ваш вопрос, мы перезвоним или ответим в мессенджер{" "}
@@ -36,14 +36,14 @@ function Textus() {
       <div className={module.column}>
         <div className={module["column-checkbox"]}>
           <input type="checkbox" name="" id="" />
-          <a href="">
+          <a href={serverData?.terms}>
             Я прочитал(а) и принимаю условия оферты и обработки персональных
             данных*
           </a>
         </div>
         <Button>отправить</Button>
       </div>
-    </div>
+    </form>
   );
 }
 

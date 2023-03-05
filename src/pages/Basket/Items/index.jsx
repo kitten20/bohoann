@@ -5,24 +5,6 @@ import Buttons from "./Buttons";
 import module from "./style.module.scss";
 
 function Items() {
-  const items = [
-    {
-      item: "Описание товара, размер",
-      price: 9999,
-      lastPrice: 19999,
-    },
-    {
-      item: "Описание товара, размер",
-      price: 9999,
-      lastPrice: 19999,
-    },
-    {
-      item: "Описание товара, размер",
-      price: 9999,
-      lastPrice: 19999,
-    },
-  ];
-
   return (
     <>
       <div className={module.gradient}>
@@ -33,7 +15,7 @@ function Items() {
       </div>
 
       <div className={module["basket-items"]}>
-        <ItemsBlock {...{ items }} />
+        <ItemsBlock  />
         <Dolyami />
       </div>
 

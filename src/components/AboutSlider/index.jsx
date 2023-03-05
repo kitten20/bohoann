@@ -1,3 +1,5 @@
+import { useServerStore } from "../../store";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -12,38 +14,28 @@ import img6 from "./assets/6.png";
 
 import module from "./style.module.scss";
 
-function AboutSlider({ userSlides = [], className = "", userSlideClassName = "",}) {
-  const slides = [
-    {
-      img: img1,
-    },
-    {
-      img: img2,
-    },
-    {
-      img: img3,
-    },
-    {
-      img: img4,
-    },
-    {
-      img: img5,
-    },
-    {
-      img: img6,
-    },
-  ];
+function AboutSlider({
+  userSlides = [],
+  className = "",
+  userSlideClassName = "",
+}) {
+  const { serverData } = useServerStore();
+
+  const slides = serverData[0]?.aboutSlider;
 
   return (
     <SliderWhiteArrows {...{ className }}>
       {userSlides.length === 0
-        ? slides.map((i) => (
+        ? slides?.map((i) => (
             <SwiperSlide className={module.about__slide} key={i.img}>
               <img src={i.img} alt="" />
             </SwiperSlide>
           ))
         : userSlides.map((i) => (
-            <SwiperSlide className={module.about__slide + " " + userSlideClassName} key={i.img}>
+            <SwiperSlide
+              className={module.about__slide + " " + userSlideClassName}
+              key={i.img}
+            >
               <img src={i.img} alt="" />
             </SwiperSlide>
           ))}

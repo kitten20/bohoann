@@ -12,7 +12,7 @@ const serverStore = (set) => ({
   addServerData: (i) => set((state) => ({ serverData: [...state.serverData, i] })),
 });
 
-const useStore = create(persist(store, { name: "basket" }));
+export const useStore = create(persist(store, { name: "basket" }));
 export const useServerStore = create(serverStore);
 
 export default useStore;
