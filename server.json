@@ -1,4 +1,52 @@
 {
+  "mainLinks": [
+    {
+      "vk": "https://vk.com",
+      "telegram": "https://telegram.com",
+      "pinterest": "https://pinterest.com",
+      "yandexSplit": "https://yandex.com",
+      "telephoneMessage": {
+        "link": "https://whatsapp.com",
+        "telephone": "8 800 300 8 777"
+      },
+      "email": "bohoann@yandex.ru",
+      "ozon": "https://ozon.com",
+      "wildberries": "https://wildberries.com",
+      "terms": "https://www.yandex.ru"
+    }
+  ],
+
+  "documentation": [
+    {
+      "headText": "информаци для покупателей ювелирных изделий",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "Эскизы пробирных клейм для серебряных изделий",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "Информация на ярлыке изделия",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "Особенности продажи изделий из драгоценных металлов и драгоценных камней",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "Правила эксплуатации ювелирных изделий из драгоценных металлов и драгоценных камней",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "Постановление Правительства РФ Об утверждении Правил продажи товаров ",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    },
+    {
+      "headText": "политика конфиденциальности",
+      "bodyText": "Lorem ipsum dolor sit amet, consectet null a ante. Lorem ipsum dolor sit amet, consect"
+    }
+  ],
+
   "bestSellers": [
     {
       "imageIndex": 0,
@@ -566,9 +614,7 @@
 
   "footerLinks": [
     {
-      "title": "каталог",
-
-      "links": [
+      "catalogue": [
         {
           "text": "SALE",
           "link": "https://www.google.com"
@@ -601,12 +647,9 @@
           "text": "Золото",
           "link": "https://www.google.com"
         }
-      ]
-    },
-    {
-      "title": "коллекции",
+      ],
 
-      "links": [
+      "collections": [
         {
           "text": "Новинки",
           "link": "https://www.google.com"
@@ -639,12 +682,9 @@
           "text": "Остальные коллекции",
           "link": "https://www.google.com"
         }
-      ]
-    },
-    {
-      "title": "СЕРВИС",
+      ],
 
-      "links": [
+      "service": [
         {
           "text": "Кастомизация и индивидуальное изготовление",
           "link": "https://www.google.com"
@@ -657,30 +697,28 @@
           "text": "Другое",
           "link": "https://www.google.com"
         }
-      ]
-    },
-    {
-      "links": [
+      ],
+
+      "addresses": [
         {
           "city": "Москва",
           "street": "Садово-Черногрязская 3Бс1",
-          "telephoneNum": "+7 900 620 88 77",
-
-          "link": "tel:+7 900 620 88 77",
-          "type": "footer-link"
+          "telephone": "+7 900 620 88 77",
+          "link": "tel:+7 900 620 88 77"
         },
         {
-          "city": "Санкт-Петербург",
-          "street": "Рылеева 33",
-          "telephoneNum": "+7 900 620 88 77",
-          "link": "+7 812 250 8 777",
-          "type": "footer-link"
+          "city": "Санкт-петербург",
+          "street": "рылеева 33",
+          "telephone": "+7 812 250 8 777",
+          "link": "tel:+7 812 250 8 777"
         },
         {
           "text": "bohoann@yandex.ru",
           "link": "https://www.google.com"
         }
-      ]
+      ],
+
+      "human": "ИП Коваленко Д.А. ОРГНИП 316784700073997"
     }
   ],
 
@@ -739,7 +777,7 @@
 
   "questionAnswerDataPage": [
     {
-      "headText": "как сделать заказ ?",
+      "headText": "как сделать заказ?",
       "bodyText": "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ  Ответ ответ ответответответ ответответот ответ ответответ ответ"
     },
     {
@@ -832,13 +870,15 @@
 
       "itemCardData": [
         {
-          "title": "название  товара в несколько слов",
+          "title": "название товара в несколько слов",
           "discount": 30,
           "description": "Описание товара описание товара описание товара описание товара описание товараописание товара описание товара описание товара описание товара описание товара",
           "price": 9999,
           "lastPrice": 19999,
           "paymentNum": 4,
           "paymentSum": 3333,
+          "weight": 99,
+          "itemId": 7890678,
           "sizes": [
             "14",
             "15",
@@ -853,8 +893,13 @@
             "19,5",
             "20"
           ],
-          "weight": 99,
-          "itemId": 7890678
+          "images": [
+            "./images/itemCard/1.svg",
+            "./images/itemCard/1.svg",
+            "./images/itemCard/1.svg",
+            "./images/itemCard/1.svg",
+            "./images/itemCard/1.svg"
+          ]
         }
       ],
 
@@ -876,6 +921,206 @@
           "bodyText": "Ответ ответ ответответответ ответответот ответ ответответ ответ ответ ответ ответответот ответ ответответ ответ ответ  ответответ "
         }
       ]
+    }
+  ],
+
+  "ringTypes": [
+    { "type": "гладкое" },
+    { "type": "битое" },
+    { "type": "фатурное" },
+    { "type": "бархатное" },
+    { "type": "шарики" }
+  ],
+
+  "collections": [
+    {
+      "title": "enigma",
+      "cardText": "Коллекция украшений с неровным краем и вставками из ограненных камней. Чтобы усилить мерцание изделий на коже мы использовали античную рельефную фактуру в сочетании с чёткими гранями, которые ловят и преломляют любой свет. В итоге получилась женственная, сияющая, таинственная коллекция.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/13.svg"
+    },
+    {
+      "title": "woman",
+      "cardText": "Всегда считали, что драгоценные и натуральные камни имеют схожую энергию с женской — грани и изгибы, природное сияние, таинство, игра светотени. Так родилась коллекция нежных мерцающих украшений.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/3.svg"
+    },
+    {
+      "title": "brilliance",
+      "cardText": "В 2012 году мы вывели авторскую текстуру, которая имитирует мелкую россыпь бриллиантов. Текстура стала визитной карточкой бренда, и на её основе мы создали коллекцию Brilliance. Внутри серьги, подвески и кольца, в том числе обручальные кольца в серебре и золоте.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/1.svg"
+    },
+    {
+      "title": "nimbus",
+      "cardText": "В 2012 году мы вывели авторскую текстуру, которая имитирует мелкую россыпь бриллиантов. Текстура стала визитной карточкой бренда, и на её основе мы создали коллекцию Brilliance. Внутри серьги, подвески и кольца, в том числе обручальные кольца в серебре и золоте.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/5.svg"
+    },
+    {
+      "title": "balance",
+      "cardText": "В 2012 году мы вывели авторскую текстуру, которая имитирует мелкую россыпь бриллиантов. Текстура стала визитной карточкой бренда, и на её основе мы создали коллекцию Brilliance. Внутри серьги, подвески и кольца, в том числе обручальные кольца в серебре и золоте.",
+      "route": "/",
+      "blackTitleBoolean": true,
+      "img": "./images/collections/4.svg"
+    },
+    {
+      "title": "museum",
+      "cardText": "В 2012 году мы вывели авторскую текстуру, которая имитирует мелкую россыпь бриллиантов. Текстура стала визитной карточкой бренда, и на её основе мы создали коллекцию Brilliance. Внутри серьги, подвески и кольца, в том числе обручальные кольца в серебре и золоте.",
+      "route": "/",
+      "blackTitleBoolean": true,
+      "img": "./images/collections/6.svg"
+    },
+    {
+      "title": "base",
+      "cardText": "Ювелирная база в духе Bohoann — украшения, которые подойдут к любому образу и моменту времени, но при этом останутся массивными, фактурными и заметными. Мастхэв на каждый день для всех свободных духом.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/7.svg"
+    },
+    {
+      "title": "zodiak",
+      "cardText": "Коллекция зодиакальных колье, созданных совместно с астрологом. В каждом изделии сочетается энергия трёх: планеты, знака зодиака и натурального камня. В дополнение к колье вы получаете подробное описание его энергетики.",
+      "route": "/",
+      "blackTitleBoolean": true,
+      "img": "./images/collections/9.svg"
+    },
+    {
+      "title": "chains",
+      "cardText": "Тотальный эксперимент на тему цепных связей. В изделиях комбинируем размер, форму звеньев и сочетания цепей разной ширины. Кроме привычных браслетов и цепочек на шею в коллекцию включены экстравагантные нательные украшения, кольца и цепная перчатка из серебра.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/10.svg"
+    },
+    {
+      "title": "petra",
+      "cardText": "Чувственные украшения с отпечатками настоящего кружева. Кружевную ткань прокатывают вместе с металлом, в итоге получается уникальный оттиск мелкого или более крупного узора. <br/>Нежная и женственная, хрупкая, но смелая, наивная, настоящая — её звали Петра.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/8.svg"
+    },
+    {
+      "title": "tropics",
+      "cardText": "Дикая, неукротимая коллекция, вдохновлённая могущественной флорой и фауной тропиков. На каждом изделии уникальный принт экзотических растений: эхеверии, агавы, сочных зелёных листьев, а среди драгоценных зарослей царствует величественная пантера.        ",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/2.svg"
+    },
+    {
+      "title": "hypnosis",
+      "cardText": "Гипнотическая коллекция подвижных украшений. В каждом изделии сплетены окружности разной толщины и текстур. Преумножение линий захватывает внимание и уже не отпускает.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/12.svg"
+    },
+    {
+      "title": "new",
+      "cardText": "Коллекция украшений с неровным краем и вставками из ограненных камней. Чтобы усилить мерцание изделий на коже мы использовали античную рельефную фактуру в сочетании с чёткими гранями, которые ловят и преломляют любой свет. В итоге получилась женственная, сияющая, таинственная коллекция.",
+      "route": "/",
+      "blackTitleBoolean": false,
+      "img": "./images/collections/13.svg"
+    },
+    {
+      "title": "кольца-столбы",
+      "cardText": "Мы называем их кольца-аксессуары, потому что веса в них скорее как в сумке. Если на вас кольцо-столб Bohoann, то другие украшение вам больше не нужны — это понятное, прямое ювелирное заявление..",
+      "route": "/",
+      "blackTitleBoolean": true,
+      "img": "./images/collections/rings.svg"
+    }
+  ],
+
+  "aboutSlider": [
+    {
+      "img": "./images/about/1.png"
+    },
+    {
+      "img": "./images/about/2.png"
+    },
+    {
+      "img": "./images/about/3.png"
+    },
+    {
+      "img": "./images/about/4.png"
+    },
+    {
+      "img": "./images/about/5.png"
+    },
+    {
+      "img": "./images/about/6.png"
+    }
+  ],
+
+  "aboutPage": [
+    {
+      "headerBackground": "./images/about/aboutPage/background.png",
+      "headerSlider": [
+        {
+          "img": "./images/about/1.png"
+        },
+        {
+          "img": "./images/about/2.png"
+        },
+        {
+          "img": "./images/about/3.png"
+        },
+        {
+          "img": "./images/about/4.png"
+        },
+        {
+          "img": "./images/about/5.png"
+        },
+        {
+          "img": "./images/about/6.png"
+        }
+      ],
+
+      "commentsSlider": [
+        {
+          "text": "Анна Коваленко, основательница и главный дизайнер Bohoann, однажды рискнула и начала свой ювелирный эксперимент в стиле бохо."
+        },
+        {
+          "text": "Оказалось, что жизненный опыт может иметь бесконечное количество воплощений в драгоценных металлах. Вот уже 12 лет мы в поиске и до сих пор обнаруживаем новые необычные интерпретации."
+        },
+        {
+          "text": "Первые украшения мы создали в небольшой мастерской в Петербурге, а сегодня у Bohoann есть два фирменных бутика и собственное производство. "
+        },
+        {
+          "text": "Основа изделий - это благородные металлы, натуральные камни и необычные сложные текстуры. Мы рассказываем об индивидуальности, независимой самобытности и смелости выбора."
+        },
+        {
+          "text": "Все коллекции стилистически самостоятельные и не дадут вам заскучать - примеряйте множество эмоций одновременно!"
+        }
+      ],
+
+      "tryAll": "https://github.com/",
+      "testRingBar": "https://gitbucket.com/"
+    }
+  ],
+
+  "onlineTest": [
+    {
+      "link": "https://whatsapp.com"
+    }
+  ],
+
+  "contacts": [
+    {
+      "ozon": "./images/contacts/ozon.svg",
+      "wildberries": "./images/contacts/wildberries.svg",
+      "vk": "./images/contacts/vk.svg",
+      "telegram": "./images/contacts/telegram.svg",
+      "pinterest": "./images/contacts/pinterest.svg"
+    }
+  ],
+
+  "payment": [
+    {
+      "more": "https://github.com/",
+      "makeAPayment": "https://google.com/"
     }
   ]
 }

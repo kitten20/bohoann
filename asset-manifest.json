@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bohoann/static/css/main.0c363a65.css",
-    "main.js": "/bohoann/static/js/main.188bb8a3.js",
+    "main.css": "/bohoann/static/css/main.bbc4dae8.css",
+    "main.js": "/bohoann/static/js/main.eac817ec.js",
     "static/media/10.svg": "/bohoann/static/media/10.0eb56e082d62bae51c5e07e37638b1ba.svg",
     "static/media/background-1.svg": "/bohoann/static/media/background-1.efa49c6f3659a4c03b72.svg",
     "static/media/background-1-tablet.svg": "/bohoann/static/media/background-1-tablet.198ecad18e8b3599337a.svg",
@@ -25,7 +25,6 @@
     "static/media/video.svg": "/bohoann/static/media/video.e129ebb2c0107d16e3ddfc69e007184a.svg",
     "static/media/youtube.svg": "/bohoann/static/media/youtube.6ade1a69726901d041f31b15aa6a0ba5.svg",
     "static/media/2.svg": "/bohoann/static/media/2.e8db76bd573cceaaf4aaec888b0ac055.svg",
-    "static/media/background.png": "/bohoann/static/media/background.e63415781b6805615ccf.png",
     "static/media/hands.svg": "/bohoann/static/media/hands.12b12fac0370b3a4e607a8cf45cb979b.svg",
     "static/media/6.svg": "/bohoann/static/media/6.fc19c23c0bba15395adf8c8e7a5e74c1.svg",
     "static/media/11.svg": "/bohoann/static/media/11.4f69a44534d2bb9f0e67d2479b7348d1.svg",
@@ -33,6 +32,7 @@
     "static/media/5.svg": "/bohoann/static/media/5.cac8e6f282ae140939ca807c00a8fbe4.svg",
     "static/media/7.svg": "/bohoann/static/media/7.bdb276038bb541dffe620d644c4db816.svg",
     "static/media/4.svg": "/bohoann/static/media/4.e49e1ec642aa5743eeb3183469dd8003.svg",
+    "static/media/background.png": "/bohoann/static/media/background.e63415781b6805615ccf.png",
     "static/media/ring.svg": "/bohoann/static/media/ring.a5e0c3a5e94d7ba1aceda4ba3c19d0ea.svg",
     "static/media/Mont-ThinItalic.eot": "/bohoann/static/media/Mont-ThinItalic.5510e8d36aaaf841911a.eot",
     "static/media/Mont-ExtraLightItalic.eot": "/bohoann/static/media/Mont-ExtraLightItalic.0329ea9a75589c1375c9.eot",
@@ -134,11 +134,11 @@
     "static/media/dolyami.svg": "/bohoann/static/media/dolyami.d199cc13b5ed56f9f2f82e795a0b93b7.svg",
     "static/media/logo_mobile.svg": "/bohoann/static/media/logo_mobile.606231de91a276e78a6aa1f92b890f98.svg",
     "static/media/empty.svg": "/bohoann/static/media/empty.a3de745ea003474e175002e4fd1d8a66.svg",
-    "main.0c363a65.css.map": "/bohoann/static/css/main.0c363a65.css.map",
-    "main.188bb8a3.js.map": "/bohoann/static/js/main.188bb8a3.js.map"
+    "main.bbc4dae8.css.map": "/bohoann/static/css/main.bbc4dae8.css.map",
+    "main.eac817ec.js.map": "/bohoann/static/js/main.eac817ec.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c363a65.css",
-    "static/js/main.188bb8a3.js"
+    "static/css/main.bbc4dae8.css",
+    "static/js/main.eac817ec.js"
   ]
 }
